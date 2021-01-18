@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -340,6 +341,10 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\ProductManager\Index.cshtml" />
+    <Content Include="Views\ProductManager\Create.cshtml" />
+    <Content Include="Views\ProductManager\Edit.cshtml" />
+    <Content Include="Views\ProductManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,6 +359,24 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CupcakeShop.Core\CupcakeShop.Core.csproj">
+      <Project>{312b12f0-3f67-4d18-9e39-5601cd2f8c69}</Project>
+      <Name>CupcakeShop.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CupcakeShop.DataAccess.InMemory\CupcakeShop.DataAccess.InMemory.csproj">
+      <Project>{f2775b80-ae09-41db-a74b-5abba05d0b01}</Project>
+      <Name>CupcakeShop.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CupcakeShop.DataAccess.SQL\CupcakeShop.DataAccess.SQL.csproj">
+      <Project>{04afdcee-8c2f-404a-86a3-7e7054e55939}</Project>
+      <Name>CupcakeShop.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CupcakeShop.Services\CupcakeShop.Services.csproj">
+      <Project>{c2bcf1ac-db62-4c8a-9a9d-d103c3225760}</Project>
+      <Name>CupcakeShop.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
