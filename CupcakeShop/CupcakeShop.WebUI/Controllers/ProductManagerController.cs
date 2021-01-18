@@ -5,16 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using CupcakeShop.Core.Models;
 using CupcakeShop.DataAccess.InMemory;
+using CupcakeShop.Core.ViewModels;
 
 namespace CupcakeShop.WebUI.Controllers
 {
     public class ProductManagerController : Controller
     {
         ProductRepository context;
+        ProductCategoryRepository productCategories;
 
         public ProductManagerController()
         {
             context = new ProductRepository();
+            productCategories = new ProductCategoryRepository();
         }
 
         // GET: ProductManager
@@ -23,11 +26,16 @@ namespace CupcakeShop.WebUI.Controllers
             List<Product> products = context.Collection().ToList();
             return View(products);
         }
+
         public ActionResult Create()
         {
-            Product product = new Product();
-            return View(product);
+            ProductManagerViewModel viewModel = new ProductManagerViewModel();
+
+            viewModel.Product = new Product();
+            viewModel.ProductCategories = productCategories.Collection();
+            return View(viewModel);
         }
+
         [HttpPost]
         public ActionResult Create(Product product)
         {
@@ -51,9 +59,13 @@ namespace CupcakeShop.WebUI.Controllers
             }
             else
             {
-                return View(product);
+                ProductManagerViewModel viewModel = new ProductManagerViewModel();
+                viewModel.Product = product;
+                viewModel.ProductCategories = productCategories.Collection();
+                return View(viewModel);
             }
         }
+
         [HttpPost]
         public ActionResult Edit(Product product, string Id)
         {
