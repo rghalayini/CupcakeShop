@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using CupcakeShop.Core.Models;
 using CupcakeShop.DataAccess.InMemory;
+using CupcakeShop.Core.Contracts;
+
 
 
 
@@ -12,12 +14,13 @@ namespace CupcakeShop.WebUI.Controllers
 {
     public class ProductCategoryManagerController : Controller
     {
-        InMemoryRepository<ProductCategory> context;
+        IRepository<ProductCategory> context;
 
-        public ProductCategoryManagerController()
+        public ProductCategoryManagerController(IRepository<ProductCategory> context)
         {
-            context = new InMemoryRepository<ProductCategory>();
+            this.context = context;
         }
+
 
         // GET: ProductCategoryManager
         public ActionResult Index()
