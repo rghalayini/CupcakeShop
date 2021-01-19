@@ -7,6 +7,7 @@ using CupcakeShop.Core.Models;
 using CupcakeShop.DataAccess.InMemory;
 using CupcakeShop.Core.ViewModels;
 using CupcakeShop.Core.Contracts;
+using System.IO;
 
 namespace CupcakeShop.WebUI.Controllers
 {
@@ -38,7 +39,7 @@ namespace CupcakeShop.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Product product)
+        public ActionResult Create(Product product, HttpPostedFileBase file)
         {
             if (!ModelState.IsValid)
             {
@@ -46,11 +47,17 @@ namespace CupcakeShop.WebUI.Controllers
             }
             else
             {
+                if (file != null)
+                {
+                    product.Image = product.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ProductImages//") + product.Image);
+                }
                 context.Insert(product);
                 context.Commit();
                 return RedirectToAction("Index");
             }
         }
+
         public ActionResult Edit(string Id)
         {
             Product product = context.Find(Id);
@@ -68,7 +75,7 @@ namespace CupcakeShop.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Product product, string Id)
+        public ActionResult Edit(Product product, string Id, HttpPostedFileBase file)
         {
             Product productToEdit = context.Find(Id);
             if (productToEdit == null)
@@ -81,9 +88,14 @@ namespace CupcakeShop.WebUI.Controllers
                 {
                     return View(product);
                 }
+                if (file != null)
+                {
+                    product.Image = product.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ProductImages//") + productToEdit.Image);
+                }
                 productToEdit.Category = product.Category;
                 productToEdit.Description = product.Description;
-                productToEdit.Image = product.Image;
+
                 productToEdit.Name = product.Name;
                 productToEdit.Price = product.Price;
 
@@ -92,6 +104,7 @@ namespace CupcakeShop.WebUI.Controllers
                 return RedirectToAction("Index");
             }
         }
+
         public ActionResult Delete(string Id)
         {
             Product productToDelete = context.Find(Id);
