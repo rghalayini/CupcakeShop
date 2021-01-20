@@ -7,36 +7,62 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-</head>
-<body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #422316;">
-        <div class="container">
-            @Html.ActionLink("The Cupcake Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Product Admin", "Index", "ProductManager", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Product Category Admin", "Index", "ProductCategoryManager", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    @Styles.Render("~/Content/style-override.css")
+
+</head>
+<body>
+    <div id="brown-bar" style="
+        width: 100%;
+        height: 40px;
+        background-color: rgb(66, 35, 22)">
+    </div>
+    <div id="white-front-banner" style="
+        width:100%;
+        height:150px;">
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style=" position: relative; top: 40px;">
+            <div class="container">
+                @*@Html.ActionLink("The Cupcake Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav mr-auto" style="color: red;">
+                        <li class="nav-item">@Html.ActionLink("Shop Now", "Index", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Opening Hours", "Index", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Allergies", "Index", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Covid-19", "Index", "Home", null, new { @class = "nav-link" })</li>
+
+                        <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                            <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" />
+                        </a>
+                        @*<li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>*@
+                        @*<li class="nav-item">@Html.ActionLink("Product Admin", "Index", "ProductManager", null, new { @class = "nav-link" })</li>*@
+                        @*<li class="nav-item">@Html.ActionLink("Product Category Admin", "Index", "ProductCategoryManager", null, new { @class = "nav-link" })</li>*@
+                        @*<li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                          <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>*@
+                    </ul>
+                    <ul>
+                        <li>@Html.ActionLink("Login", "Create", null, new { @class = "btn btn-warning glyphicon glyphicon-plus-sign" })</li>
+
+                    </ul>
+                    @*@Html.Partial("_LoginPartial")*@
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+
+        <footer>
+            @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
+        </footer>
+    </div>
+
+
+
 </body>
 </html>
