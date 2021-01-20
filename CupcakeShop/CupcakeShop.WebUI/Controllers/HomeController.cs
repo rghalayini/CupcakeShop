@@ -40,14 +40,14 @@ namespace CupcakeShop.WebUI.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Vi älskar cupcakes! Vi vill dela med er våra cupacakes fantastiska smaker";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Kontakta oss och våra cupcakes.";
 
             return View();
         }

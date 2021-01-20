@@ -1,9 +1,40 @@
-﻿@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿<body>
+    <div class="container mt-5">
+        @{
+            ViewBag.Title = "Ni kan hitta hur man kontaktar oss här!";
+        }
+        <h2>@ViewBag.Title</h2>
+        <h3>@ViewBag.Message</h3>
 
+
+        <div class="row"></div>
+        <div class="row mt-4 justify-content-md-center">
+            <div class="col-6">
+                <p>
+                    <h3>Welcome to our shop!</h3><br>We are a group of friends with a big love of cupcakes.
+                    <br>We are located in the center of Stockholm on an old street.
+                    <br>You are welcome to visit us anytime!
+                </p>
+            </div>
+        </div>
+        <div class="row mt-2 col-10 mb-10">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d508.85983253913105!2d18.06703896001126!3d59.32561874539103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77e21bbd182f%3A0x388b4934c8bedab!2sRistorante%20Rodolfino%20since%201972!5e0!3m2!1ssv!2sse!4v1607954687165!5m2!1ssv!2sse" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <div class="row mt-5 pt-5">
+            <footer class="flex-nowrap fixed-bottom mt-5" style="background-color: #422316;">
+                <div class="row">
+                    <div class="col-1 text-muted">Address</div>
+                    <div class="col-2 text-muted">Gatan 1<br>100 01 Stockholm<br>Sweden</div>
+                    <div class="col 2 offset-2 text-muted">telefon 08-010101</div>
+                    <div class="col-1 text-muted text-end">mail</div>
+                    <div class="col 2 text-muted">cirkusrestaurant@cirkus.se</div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+<!-- 
 <address>
     One Microsoft Way<br />
     Redmond, WA 98052-6399<br />
@@ -15,3 +46,4 @@
     <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
 </address>
+-->
