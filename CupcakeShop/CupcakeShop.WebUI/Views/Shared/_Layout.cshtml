@@ -31,7 +31,7 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav mr-auto">
                             <li class="nav-item">@Html.ActionLink("Shop Now", "Index", "Home", null, new { @class = "nav-link" })</li>
-                            <li class="nav-item">@Html.ActionLink("Opening Hours", "Index", "Home", null, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("Opening Hours", "Contact", "Home", null, new { @class = "nav-link" })</li>
                             <li class="nav-item">@Html.ActionLink("Allergies", "Index", "Home", null, new { @class = "nav-link" })</li>
                             <li>
                                 <a class="navbar-brand" href="@Url.Action("Index", "Home")">
@@ -46,7 +46,7 @@
                         </ul>
                         @* ------------------------------------------------------------------------------------------------------------------------------------ *@
                         @*
-                                 @Url.Action can take it's parameters like this:
+                            @Url.Action can take it's parameters like this:
                             -->
                             @Url.Action(string actionName, string controllerName)
 

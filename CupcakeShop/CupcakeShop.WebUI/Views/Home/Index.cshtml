@@ -25,12 +25,38 @@
                 </div>
             </div>
         </div>
-
-        <div>
 </section>
 <section id="favourites">
     <div container>
-        <p>test</p>
+        <h1>Our Customers' Favourites</h1>
+        <div class="favourite-products container">
+            <div class="row">
+
+               @*@foreach (var item in Model.Products)*@
+               @foreach (var item in Model.Products.Count() > 3 ? Model.Products.Skip(Model.Products.Count() - 3) :Model.Products)
+                {
+                    <div class="col-md-4">
+                        <div class="col-md-12 item-slide">
+                            <a class="product-item">
+                                <img class="img" style="height:250px" src="~/Content/ProductImages/@item.Image" />
+                            </a>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="product-name">@Html.ActionLink(item.Name, "Details", new { id = item.Id })</p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>@item.Description</p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>@item.Price</p>
+                        </div>
+                        <div class="col-md-12 add-basket">
+                            <a href="#" class="btn btn-default">Add to Basket</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
 </section>
 
