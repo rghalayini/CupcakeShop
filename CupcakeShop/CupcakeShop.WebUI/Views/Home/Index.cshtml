@@ -6,15 +6,31 @@
 
 <section id="welcome-image">
     <div class="image-container">
-        <div class="cupcakes-image">
+        @*<div class="cupcakes-image">*@
             <img src="~/Content/GenericImages/cupcakes-image.jpg" />
+        @*</div>*@
+        <div class="overlay">
+            <h1>Love Is Sweet</h1>
+            <hr />
+            <div class="box-containers">
+                <div class="home-box">
+                    <a href="@Url.Action("Products", "ProductController")">
+                        <h2>Shop Cupcakes</h2>
+                    </a>
+                </div>
+                <div class="home-box">
+                    <a href="@Url.Action("Delivery", "DeliveryController")">
+                        <h2>Same Day Delivery</h2>
+                    </a>
+                </div>
+            </div>
         </div>
 
-    <div>
+        <div>
 </section>
 <section id="favourites">
     <div container>
-        <p></p>
+        <p>test</p>
     </div>
 </section>
 

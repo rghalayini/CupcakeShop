@@ -1,4 +1,8 @@
-﻿/*---NAVBAR ---*/
+﻿/*--- body ---*/
+/*body{
+    height:1000px;
+}*/
+/*---NAVBAR ---*/
 #nav-container {
     position: fixed;
     width:100%;
@@ -51,9 +55,8 @@
 #welcome-image {
     position: relative;
     right: 0;
-    top: 200px;
     width: 100%;
-    height: 700px;
+    height: 600px;
 /*    background-color: red;
 */    padding-left: 0;
     margin: 0;
@@ -63,17 +66,79 @@
     overflow:hidden;
 }
 
-    #welcome-image img {
-        position: absolute;
-        top:-40%;
-        width: 100%;
-        height: auto;
-    }
+#welcome-image img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+.image-container {
+    overflow: hidden;
+}
 
+/*----intro image overlay ----*/
+.overlay {
+    position: absolute;
+    top: 40%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    width: 400px;
+    height: 200px;
+    background-color: rgba(66,35,22,.6);
+}
 
+#welcome-image h1,h2 {
+    font-family: Roboto;
+    text-align: center;
+}
+#welcome-image h1 {
+    padding-top:20px;
+    color: white;
+    font-size: 3em;
+}
 
+#welcome-image h2 {
+    color: #e29495;
+    font-size: 1.2em;
+}
+
+.box-containers {
+    display: flex;
+    margin: 10px;
+    opacity: 1;
+}
+
+.home-box {
+    margin:10px;
+    margin-top: 20px;
+    width: 200px;
+    background-color:white;
+}
+.home-box:hover {
+        background-color: rgba(168,200,213);
+}
+.home-box h2:hover {
+    text-decoration:none;
+    color:white;
+}
+.home-box h2{
+    margin:10px;
+}
+.shop-box {
+    float: left;
+}
+.delivery-box{
+    float:right;
+}
+
+hr {
+    margin-top:10px;
+    width: 70%;
+    border: none;
+    height: 1px;
+    color: white; /* old IE */
+    background-color: white; /* Modern Browsers */
+}
 /* ----- Favourites ----*/
-
 #favourites {
     position: relative;
 }
