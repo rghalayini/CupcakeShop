@@ -4,57 +4,81 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - The Cupcake Shop</title>
+
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">*@
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-    @Styles.Render("~/Content/style-override.css")
+        
+    @*@Styles.Render("~/Content/style-override.css")*@
 
 </head>
 <body>
-    <div id="brown-bar" style="
-        width: 100%;
-        height: 40px;
-        background-color: rgb(66, 35, 22)">
-    </div>
-    <div id="white-front-banner" style="
+    <div id="nav-container">
+        <div id="brown-bar">
+        </div>
+        <div id="white-front-banner" style="
         width:100%;
         height:150px;">
 
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style=" position: relative; top: 40px;">
-            <div class="container">
-                @*@Html.ActionLink("The Cupcake Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav mr-auto" style="color: red;">
-                        <li class="nav-item">@Html.ActionLink("Shop Now", "Index", "Home", null, new { @class = "nav-link" })</li>
-                        <li class="nav-item">@Html.ActionLink("Opening Hours", "Index", "Home", null, new { @class = "nav-link" })</li>
-                        <li class="nav-item">@Html.ActionLink("Allergies", "Index", "Home", null, new { @class = "nav-link" })</li>
-                        <li class="nav-item">@Html.ActionLink("Covid-19", "Index", "Home", null, new { @class = "nav-link" })</li>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style=" position: relative; top: 40px;">
+                <div class="container">
+                    @*@Html.ActionLink("The Cupcake Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav mr-auto">
+                            <li class="nav-item">@Html.ActionLink("Shop Now", "Index", "Home", null, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("Opening Hours", "Index", "Home", null, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("Allergies", "Index", "Home", null, new { @class = "nav-link" })</li>
+                            <li>
+                                <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                                    <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" />
+                                </a>
+                            </li>
+                            @*<li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>*@
+                            @*<li class="nav-item">@Html.ActionLink("Product Admin", "Index", "ProductManager", null, new { @class = "nav-link" })</li>*@
+                            @*<li class="nav-item">@Html.ActionLink("Product Category Admin", "Index", "ProductCategoryManager", null, new { @class = "nav-link" })</li>*@
+                            @*<li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                                <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>*@
+                        </ul>
+                        @* ------------------------------------------------------------------------------------------------------------------------------------ *@
+                        @*
+                                 @Url.Action can take it's parameters like this:
+                            -->
+                            @Url.Action(string actionName, string controllerName)
 
-                        <a class="navbar-brand" href="@Url.Action("Index", "Home")">
-                            <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" />
-                        </a>
-                        @*<li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>*@
-                        @*<li class="nav-item">@Html.ActionLink("Product Admin", "Index", "ProductManager", null, new { @class = "nav-link" })</li>*@
-                        @*<li class="nav-item">@Html.ActionLink("Product Category Admin", "Index", "ProductCategoryManager", null, new { @class = "nav-link" })</li>*@
-                        @*<li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
-                          <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>*@
-                    </ul>
-                    <ul>
-                        <li>@Html.ActionLink("Login", "Create", null, new { @class = "btn btn-warning glyphicon glyphicon-plus-sign" })</li>
+                            Whereas @Html.ActionLink can take it's parameters like this:
+                            -->
+                            @Html.ActionLink(string linkText, string actionName, string controllerName)*@
+                        @* ------------------------------------------------------------------------------------------------------------------------------------ *@
 
-                    </ul>
-                    @*@Html.Partial("_LoginPartial")*@
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="nav-icons">
+                                <a href="@Url.Action("Search", "SearchController")">
+                                    <i class="fas fa-search icons"></i>
+                                </a>
+                            </li>
+                            <li class="nav-icons">
+                                <a href="@Url.Action("Map", "MapController")">
+                                    <i class="fas fa-map-marker-alt icons"></i>
+                            </li>
+                            <li class="nav-icons">
+                                <a href="@Url.Action("Basket", "BasketController")">
+                                    <i class="fas fa-shopping-basket icons"></i>
+                            </li>
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </div>
-    <div class="container body-content">
+    <div>
+    @*<div class="container body-content">*@
         @RenderBody()
 
         <footer>
@@ -62,6 +86,9 @@
         </footer>
     </div>
 
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 
 
 </body>
