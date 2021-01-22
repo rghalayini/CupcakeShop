@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace CupcakeShop.Core.ViewModels
 {
@@ -13,15 +14,12 @@ namespace CupcakeShop.Core.ViewModels
 
         public BasketSummaryViewModel()
         {
+
         }
         public BasketSummaryViewModel(int basketCount, decimal basketTotal)
         {
             this.BasketCount = basketCount;
             this.BasketTotal = basketTotal;
         }
-
-
     }
-
-
 }

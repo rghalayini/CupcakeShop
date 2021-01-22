@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using CupcakeShop.Core;
 
 namespace CupcakeShop.Services
 {
@@ -14,18 +15,21 @@ namespace CupcakeShop.Services
     {
         IRepository<Product> productContext;
         IRepository<Basket> basketContext;
+
         public const string BasketSessionName = "eCommerceBasket";
 
         public BasketService(IRepository<Product> ProductContext, IRepository<Basket> BasketContext)
         {
-            this.productContext = ProductContext;
             this.basketContext = BasketContext;
+            this.productContext = ProductContext;
         }
 
         private Basket GetBasket(HttpContextBase httpContext, bool createIfNull)
         {
-            HttpCookie cookie = httpContext.Request.Cookies.Get(BasketSessionName); //reading cookie
+            HttpCookie cookie = httpContext.Request.Cookies.Get(BasketSessionName);
+
             Basket basket = new Basket();
+
             if (cookie != null)
             {
                 string basketId = cookie.Value;
@@ -48,19 +52,22 @@ namespace CupcakeShop.Services
                     basket = CreateNewBasket(httpContext);
                 }
             }
+
             return basket;
+
         }
 
         private Basket CreateNewBasket(HttpContextBase httpContext)
         {
-            Basket basket = new Basket(); 
+            Basket basket = new Basket();
             basketContext.Insert(basket);
             basketContext.Commit();
 
-            HttpCookie cookie = new HttpCookie(BasketSessionName); //creating a cookie
-            cookie.Value = basket.Id; //adding a value an ID bound to products in DB
-            cookie.Expires = DateTime.Now.AddDays(1); //adding an expire date
-            httpContext.Response.Cookies.Add(cookie); //sending back a cookie to a user
+            HttpCookie cookie = new HttpCookie(BasketSessionName);
+            cookie.Value = basket.Id;
+            cookie.Expires = DateTime.Now.AddDays(1);
+            httpContext.Response.Cookies.Add(cookie);
+
             return basket;
         }
 
@@ -68,27 +75,31 @@ namespace CupcakeShop.Services
         {
             Basket basket = GetBasket(httpContext, true);
             BasketItem item = basket.BasketItems.FirstOrDefault(i => i.ProductId == productId);
-            if (item == null) // in case item does not exists we start the count + 1
+
+            if (item == null)
             {
                 item = new BasketItem()
                 {
-                    BasketId = basket.Id, //set basket ID to current basket ID
-                    ProductId = productId, //set product ID to current produsct ID
-                    Quantity = 1 //set quantity to 1 as this is the first product of that type
+                    BasketId = basket.Id,
+                    ProductId = productId,
+                    Quantity = 1
                 };
+
                 basket.BasketItems.Add(item);
             }
             else
             {
-                item.Quantity = item.Quantity + 1; //if that item exists in the basket we increase the quantity
+                item.Quantity = item.Quantity + 1;
             }
-            basketContext.Commit(); //commit the changes
+
+            basketContext.Commit();
         }
 
         public void RemoveFromBasket(HttpContextBase httpContext, string itemId)
         {
             Basket basket = GetBasket(httpContext, true);
             BasketItem item = basket.BasketItems.FirstOrDefault(i => i.Id == itemId);
+
             if (item != null)
             {
                 basket.BasketItems.Remove(item);
@@ -98,7 +109,8 @@ namespace CupcakeShop.Services
 
         public List<BasketItemViewModel> GetBasketItems(HttpContextBase httpContext)
         {
-            Basket basket = GetBasket(httpContext, false); //get the items from DB
+            Basket basket = GetBasket(httpContext, false);
+
             if (basket != null)
             {
                 var results = (from b in basket.BasketItems
@@ -110,7 +122,9 @@ namespace CupcakeShop.Services
                                    ProductName = p.Name,
                                    Image = p.Image,
                                    Price = p.Price
-                               }).ToList();
+                               }
+                              ).ToList();
+
                 return results;
             }
             else
@@ -127,9 +141,11 @@ namespace CupcakeShop.Services
             {
                 int? basketCount = (from item in basket.BasketItems
                                     select item.Quantity).Sum();
+
                 decimal? basketTotal = (from item in basket.BasketItems
                                         join p in productContext.Collection() on item.ProductId equals p.Id
                                         select item.Quantity * p.Price).Sum();
+
                 model.BasketCount = basketCount ?? 0;
                 model.BasketTotal = basketTotal ?? decimal.Zero;
 
@@ -140,13 +156,5 @@ namespace CupcakeShop.Services
                 return model;
             }
         }
-
-
-
-
-
-
-
-
     }
 }
