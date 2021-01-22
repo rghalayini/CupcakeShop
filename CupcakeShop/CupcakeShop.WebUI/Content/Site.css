@@ -40,6 +40,18 @@
     text-decoration: none;
     color: inherit;
 }
+/* for the footer */
+
+.card,
+.card-body {
+    color: white;
+    background-color: #422316;
+    border: none;
+}
+
+
+
+/* for the footer */
 
 .icons {
     color: #422316;

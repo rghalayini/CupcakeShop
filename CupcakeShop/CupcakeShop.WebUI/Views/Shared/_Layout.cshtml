@@ -82,15 +82,15 @@
         @RenderBody()
 
         <footer>
-            <div class='container-fluid'>
-                <div class="card">
+            <div class="container-fluid">
+                <div class="card mt-5">
                     <div class="card-body">
-                            <div class="row m-0 pt-1">
+                            <div class="row m-0 pt-5">
                                 <div class="card col-12 col-md-2">
                                     <div class="card-content">
                                         <div class="card-text">
                                             <p><small>Shop Online</small></p>
-                                            <p><small> About Us </small></p>
+                                            <p><small>@Html.ActionLink("About Us", "About", "Home") </small></p>
                                             <p><small> Contact Us </small></p>
                                             <p><small> Catering </small>
                                         </div>
@@ -114,20 +114,14 @@
                                     </div>
                                 </div>
                                 <div class="card col-12 col-md-4">
-                                    <div class="card-content">
-                                        <i class="fab fa-instagram"></i> <i class="fab fa-facebook-square"></i> <i class="fab fa-twitter-square"></i>
+                                    <div class="card-content text-center my-auto">
+                                        <i class="fab fa-facebook-square fa-2x"></i> <i class="fab fa-twitter-square fa-2x"></i> <i class="fab fa-instagram fa-2x"></i>
                                     </div>
                                 </div>
                             </div>
                     </div>
                 </div>
-                    <div class="card-footer row m-0">
-                        <p> <label> <i class="fas fa-phone fa-rotate-90 text-primary"></i> </label> 800-601-0230</p>
-                        <div>
-                            <p> <small class="follow-text">FOLLOW US ON SOCIAL MEDIA</small> <label class="footer-right"> <i class="fab fa-instagram"></i> <i class="fab fa-facebook-square"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-twitter-square"></i> </label> </p>
-                        </div>
-                    </div>
-                </div>
+            </div>
         </footer>
     </div>
 
