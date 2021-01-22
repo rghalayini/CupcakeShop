@@ -24,7 +24,7 @@ namespace CupcakeShop.Services
 
         private Basket GetBasket(HttpContextBase httpContext, bool createIfNull)
         {
-            HttpCookie cookie = httpContext.Request.Cookies.Get(BasketSessionName);
+            HttpCookie cookie = httpContext.Request.Cookies.Get(BasketSessionName); //reading cookie
             Basket basket = new Basket();
             if (cookie != null)
             {
@@ -53,14 +53,14 @@ namespace CupcakeShop.Services
 
         private Basket CreateNewBasket(HttpContextBase httpContext)
         {
-            Basket basket = new Basket();
+            Basket basket = new Basket(); 
             basketContext.Insert(basket);
             basketContext.Commit();
 
-            HttpCookie cookie = new HttpCookie(BasketSessionName);
-            cookie.Value = basket.Id;
-            cookie.Expires = DateTime.Now.AddDays(1);
-            httpContext.Response.Cookies.Add(cookie);
+            HttpCookie cookie = new HttpCookie(BasketSessionName); //creating a cookie
+            cookie.Value = basket.Id; //adding a value an ID bound to products in DB
+            cookie.Expires = DateTime.Now.AddDays(1); //adding an expire date
+            httpContext.Response.Cookies.Add(cookie); //sending back a cookie to a user
             return basket;
         }
 
@@ -68,21 +68,21 @@ namespace CupcakeShop.Services
         {
             Basket basket = GetBasket(httpContext, true);
             BasketItem item = basket.BasketItems.FirstOrDefault(i => i.ProductId == productId);
-            if (item == null)
+            if (item == null) // in case item does not exists we start the count + 1
             {
                 item = new BasketItem()
                 {
-                    BasketId = basket.Id,
-                    ProductId = productId,
-                    Quantity = 1
+                    BasketId = basket.Id, //set basket ID to current basket ID
+                    ProductId = productId, //set product ID to current produsct ID
+                    Quantity = 1 //set quantity to 1 as this is the first product of that type
                 };
                 basket.BasketItems.Add(item);
             }
             else
             {
-                item.Quantity = item.Quantity + 1;
+                item.Quantity = item.Quantity + 1; //if that item exists in the basket we increase the quantity
             }
-            basketContext.Commit();
+            basketContext.Commit(); //commit the changes
         }
 
         public void RemoveFromBasket(HttpContextBase httpContext, string itemId)
@@ -98,7 +98,7 @@ namespace CupcakeShop.Services
 
         public List<BasketItemViewModel> GetBasketItems(HttpContextBase httpContext)
         {
-            Basket basket = GetBasket(httpContext, false);
+            Basket basket = GetBasket(httpContext, false); //get the items from DB
             if (basket != null)
             {
                 var results = (from b in basket.BasketItems
