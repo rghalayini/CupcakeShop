@@ -31,7 +31,7 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav mr-auto">
                             <li class="nav-item">@Html.ActionLink("Shop Now", "Index", "Home", null, new { @class = "nav-link" })</li>
-                            <li class="nav-item">@Html.ActionLink("Opening Hours", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("Opening Hours", "About", "Home", null, new { @class = "nav-link" })</li>
                             <li class="nav-item">@Html.ActionLink("Allergies", "Index", "Home", null, new { @class = "nav-link" })</li>
                             <li>
                                 <a class="navbar-brand" href="@Url.Action("Index", "Home")">
@@ -82,7 +82,52 @@
         @RenderBody()
 
         <footer>
-            @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
+            <div class='container-fluid'>
+                <div class="card">
+                    <div class="card-body">
+                            <div class="row m-0 pt-1">
+                                <div class="card col-12 col-md-2">
+                                    <div class="card-content">
+                                        <div class="card-text">
+                                            <p><small>Shop Online</small></p>
+                                            <p><small> About Us </small></p>
+                                            <p><small> Contact Us </small></p>
+                                            <p><small> Catering </small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col-12 col-md-2">
+                                    <div class="card-content">
+                                        <p><small> Dietary & Allergen </small></p>
+                                        <p><small> Careers </small></p>
+                                        <p><small> Privacy Policy</small></p>
+                                        <p><small> Terms & Conditions</small></p>
+                                    </div>
+                                </div>
+                                <div class="card col-12 col-md-4">
+                                    <div class="card-content">
+                                        <div class="card-title">
+                                            <a href="@Url.Action("Index", "Home")">
+                                                <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col-12 col-md-4">
+                                    <div class="card-content">
+                                        <i class="fab fa-instagram"></i> <i class="fab fa-facebook-square"></i> <i class="fab fa-twitter-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                    <div class="card-footer row m-0">
+                        <p> <label> <i class="fas fa-phone fa-rotate-90 text-primary"></i> </label> 800-601-0230</p>
+                        <div>
+                            <p> <small class="follow-text">FOLLOW US ON SOCIAL MEDIA</small> <label class="footer-right"> <i class="fab fa-instagram"></i> <i class="fab fa-facebook-square"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-twitter-square"></i> </label> </p>
+                        </div>
+                    </div>
+                </div>
         </footer>
     </div>
 
