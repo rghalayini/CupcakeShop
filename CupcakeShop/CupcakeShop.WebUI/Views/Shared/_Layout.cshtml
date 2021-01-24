@@ -24,6 +24,9 @@
                     <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
+                @{ 
+                    Html.RenderAction("BasketSummary", "Basket"); 
+                }
             </div>
         </div>
     </nav>
