@@ -184,7 +184,40 @@ hr {
 .add-basket {
     background-color: #a8c8d5;
 }
-    .add-basket a {
-        color: #e29495;
-        font-weight: bold;
-    }
+.add-basket a {
+    color: #e29495;
+    font-weight: bold;
+}
+
+/* ----- Product Details View ----*/
+.details-grid{
+    position:relative;
+    max-widht:100%;
+    margin-top: 250px;
+}
+
+/*.cupcake-image-details{
+    float:left;
+}
+
+.cupcake-description-details{
+    float:right;
+}*/
+
+.details-item{
+    float:left;
+}
+.details-item {
+    width: 50%;
+}
+
+.item-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+}
+.details-image {
+    max-height: 500px;
+    text-align: center;
+}
