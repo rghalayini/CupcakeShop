@@ -266,3 +266,39 @@ hr {
     justify-content: center;
     align-items: center;
 }
+
+/*---- pages with text ----*/
+.pages-text {
+    position: relative;
+    margin-top: 200px;
+    font-family: Roboto;
+    color: #422316;
+}
+.text{
+    margin:70px;
+}
+.text h3{
+    font-size:1.5rem;
+    padding-top: 20px;
+}.text p{
+     padding-top:10px;
+     padding-bottom:10px;
+ }
+
+/* --- contact ----*/
+.contacts-container{
+    display:flex;
+}
+
+.contacts-text{
+    width: 40%;
+}
+.contacts-map{
+    width:60%;
+    margin-top:4rem !important;
+}
+
+.contacts-map img{
+    width:70%;
+    padding-top:20px;
+}
