@@ -122,7 +122,7 @@ p {
     background-color: rgba(66,35,22,.6);
 }
 
-#welcome-image h1,h2 {
+#welcome-image h1,h2,.h2 {
     font-family: Roboto;
     text-align: center;
 }
@@ -150,7 +150,7 @@ p {
     background-color:white;
 }
 .home-box:hover {
-        background-color: rgba(168,200,213);
+        background-color: rgb(168,200,213);
 }
 .home-box h2:hover {
     text-decoration:none;
@@ -224,3 +224,81 @@ hr {
         color: #e29495;
         font-weight: bold;
     }
+
+
+/*--- Product Details ----*/
+.details-grid {
+    padding-top:200px;
+}
+.details-item {
+    display:flex;
+    height:400px;
+}
+.item-wrapper {
+    width:50%;
+}
+
+.details-text {
+    height:100%;
+    margin:50px;
+}
+
+.h2 {
+    text-align: left;
+    color: #422316;
+}
+
+#welcome-image h1 {
+    padding-top: 20px;
+    color: white;
+    font-size: 3em;
+}
+
+#welcome-image h2 {
+    color: #e29495;
+    font-size: 1.2em;
+}
+
+.add-basket-details {
+    margin-top: 50px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*---- pages with text ----*/
+.pages-text {
+    position: relative;
+    margin-top: 200px;
+    font-family: Roboto;
+    color: #422316;
+}
+.text{
+    margin:70px;
+}
+.text h3{
+    font-size:1.5rem;
+    padding-top: 20px;
+}.text p{
+     padding-top:10px;
+     padding-bottom:10px;
+ }
+
+/* --- contact ----*/
+.contacts-container{
+    display:flex;
+}
+
+.contacts-text{
+    width: 40%;
+}
+.contacts-map{
+    width:60%;
+    margin-top:4rem !important;
+}
+
+.contacts-map img{
+    width:70%;
+    padding-top:20px;
+}
