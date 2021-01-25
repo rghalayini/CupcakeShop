@@ -56,14 +56,45 @@ namespace CupcakeShop.WebUI.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "About our Capcake Shop";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "You like our Cupcakes and you want to contact us!";
+
+            return View();
+        }
+        public ActionResult Catering()
+        {
+            ViewBag.Message = "Capcake Caterings";
+
+            return View();
+        }
+
+        public ActionResult DietAll()
+        {
+            ViewBag.Message = "Dietary & Allergen";
+
+            return View();
+        }
+        public ActionResult Careers()
+        {
+            ViewBag.Message = "Capcake Careers";
+
+            return View();
+        }
+        public ActionResult PrivPol()
+        {
+            ViewBag.Message = "Privacy Policy";
+
+            return View();
+        }
+        public ActionResult TermsCon()
+        {
+            ViewBag.Message = "Terms & Conditions";
 
             return View();
         }

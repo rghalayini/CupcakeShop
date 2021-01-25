@@ -32,6 +32,10 @@
     top: -30px;
     height: 125px;
     width: 150px;
+    /* for the footer start */
+    border-radius: 75%;
+    background-color: white;
+    /* for the footer end */
 }
 
 .fa,
@@ -40,6 +44,38 @@
     text-decoration: none;
     color: inherit;
 }
+
+/* for the footer start */
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 140px; /* Footer height */
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 140px; /* Footer height */
+}
+
+.card,
+.card-body {
+    width: 100%;
+    color: white;
+    background-color: #422316;
+    border: none;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+/* for the footer end */
 
 .icons {
     color: #422316;

@@ -2,6 +2,7 @@ using CupcakeShop.Core.Contracts;
 using CupcakeShop.Core.Models;
 using CupcakeShop.DataAccess.InMemory;
 using CupcakeShop.DataAccess.SQL;
+using CupcakeShop.Services;
 using System;
 using Unity;
 
@@ -47,6 +48,9 @@ namespace CupcakeShop.WebUI
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IRepository<Product>, SQLRepository<Product>>();
             container.RegisterType<IRepository<ProductCategory>, SQLRepository<ProductCategory>>();
+            container.RegisterType<IRepository<Basket>, SQLRepository<Basket>>();
+            container.RegisterType<IRepository<BasketItem>, SQLRepository<BasketItem>>();
+            container.RegisterType<IBasketService, BasketService>();
         }
     }
 }
