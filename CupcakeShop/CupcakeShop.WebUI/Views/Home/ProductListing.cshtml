@@ -6,7 +6,7 @@
 
 <section id="favourites">
 
-    <div container style="padding-top:200px">
+    <div class="container" style="padding-top:200px">
         <h1>Our Products</h1>
         <div class="favourite-products container">
             <div class="row">
@@ -24,7 +24,8 @@
                 <div class="col-md-10">
                     <div class="row">
                         @foreach (var item in Model.Products)
-                        {<div class="col-md-4">
+                        {
+                            <div class="col-md-4">
                                 <div class="col-md-12 item-slide">
                                     <a class="product-item">
                                         <img class="img" style="height:250px" src="~/Content/ProductImages/@item.Image" />
@@ -37,7 +38,7 @@
                                     <p>@item.Description</p>
                                 </div>
                                 <div class="col-md-12">
-                                    <p>@item.Price</p>
+                                    <p>@String.Format("{0:c}", item.Price)</p>
                                 </div>
                                 <div class="col-md-12 add-basket">
                                     <a href="#" class="btn btn-default">Add to Basket</a>
