@@ -24,38 +24,38 @@
                 width:100%;
                 height:150px;">
 
-                    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style=" position: relative; top: 40px;">
-                        <div class="container">
-                            @*@Html.ActionLink("The Cupcake Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="navbar-collapse collapse">
-                                <ul class="nav navbar-nav mr-auto">
-                                    <li class="nav-item">@Html.ActionLink("Shop Now", "Index", "Home", null, new { @class = "nav-link" })</li>
-                                    <li class="nav-item">@Html.ActionLink("Opening Hours", "About", "Home", null, new { @class = "nav-link" })</li>
-                                    <li class="nav-item">@Html.ActionLink("Allergies", "DietAll", "Home", null, new { @class = "nav-link" })</li>
-                                    <li>
-                                        <a class="navbar-brand" href="@Url.Action("Index", "Home")">
-                                            <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" />
-                                        </a>
-                                    </li>
-                                    @*<li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>*@
-                                    @*<li class="nav-item">@Html.ActionLink("Product Admin", "Index", "ProductManager", null, new { @class = "nav-link" })</li>*@
-                                    @*<li class="nav-item">@Html.ActionLink("Product Category Admin", "Index", "ProductCategoryManager", null, new { @class = "nav-link" })</li>*@
-                                    @*<li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
-                                        <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>*@
-                                </ul>
-                                @* ------------------------------------------------------------------------------------------------------------------------------------ *@
-                                @*
-                                    @Url.Action can take it's parameters like this:
-                                    -->
-                                    @Url.Action(string actionName, string controllerName)
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style=" position: relative; top: 40px;">
+                <div class="container">
+                    @*@Html.ActionLink("The Cupcake Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav mr-auto">
+                            <li class="nav-item">@Html.ActionLink("Shop Now", "Index", "Home", null, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("Opening Hours", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("Allergies", "Index", "Home", null, new { @class = "nav-link" })</li>
+                            <li>
+                                <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                                    <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" />
+                                </a>
+                            </li>
+                            @*<li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>*@
+                            @*<li class="nav-item">@Html.ActionLink("Product Admin", "Index", "ProductManager", null, new { @class = "nav-link" })</li>*@
+                            @*<li class="nav-item">@Html.ActionLink("Product Category Admin", "Index", "ProductCategoryManager", null, new { @class = "nav-link" })</li>*@
+                            @*<li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                                <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>*@
+                        </ul>
+                        @* ------------------------------------------------------------------------------------------------------------------------------------ *@
+                        @*
+                            @Url.Action can take it's parameters like this:
+                            -->
+                            @Url.Action(string actionName, string controllerName)
 
-                                    Whereas @Html.ActionLink can take it's parameters like this:
-                                    -->
-                                    @Html.ActionLink(string linkText, string actionName, string controllerName)*@
-                                @* ------------------------------------------------------------------------------------------------------------------------------------ *@
+                            Whereas @Html.ActionLink can take it's parameters like this:
+                            -->
+                            @Html.ActionLink(string linkText, string actionName, string controllerName)*@
+                        @* ------------------------------------------------------------------------------------------------------------------------------------ *@
 
 
                                 <ul class="nav navbar-nav navbar-right">
