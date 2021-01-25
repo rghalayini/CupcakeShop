@@ -14,5 +14,6 @@ namespace CupcakeShop.Core.Models
         {
             this.BasketItems = new List<BasketItem>();
         }
+
     }
 }
