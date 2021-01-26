@@ -38,7 +38,7 @@
                                     <p>@String.Format("{0:c}", item.Price)</p>
                                 </div>
                                 <div class="col-md-12 add-basket">
-                                    <a href="#" class="btn btn-default">Add to Basket</a>
+                                    <a href="@Url.Action("AddToBasket","Basket", new { Id=item.Id})" class="btn btn-default add-button">Add to Basket</a>
                                 </div>
                             </div>
                         }

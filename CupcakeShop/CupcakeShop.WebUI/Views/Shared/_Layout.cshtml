@@ -7,81 +7,64 @@
 
     @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">*@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    
+
+    @* Jquery added to modify CSS dynamically *@
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-        
-    @*@Styles.Render("~/Content/style-override.css")*@
 
 </head>
 <body>
     <div id="page-container">
         <div id="content-wrap">
             <div id="nav-container">
-                <div id="brown-bar">
-                </div>
-                <div id="white-front-banner" style="
-                width:100%;
-                height:150px;">
-
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style=" position: relative; top: 40px;">
-                <div class="container">
-                    @*@Html.ActionLink("The Cupcake Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav mr-auto">
-                            <li class="nav-item">@Html.ActionLink("Shop Now", "ProductListing", "Home", null, new { @class = "nav-link" })</li>
-                            <li class="nav-item">@Html.ActionLink("Opening Hours", "Contact", "Home", null, new { @class = "nav-link" })</li>
-                            <li class="nav-item">@Html.ActionLink("Allergies", "Index", "Home", null, new { @class = "nav-link" })</li>
-                            <li>
-                                <a class="navbar-brand" href="@Url.Action("Index", "Home")">
-                                    <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" />
-                                </a>
-                            </li>
-                            @*<li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>*@
-                            @*<li class="nav-item">@Html.ActionLink("Product Admin", "Index", "ProductManager", null, new { @class = "nav-link" })</li>*@
-                            @*<li class="nav-item">@Html.ActionLink("Product Category Admin", "Index", "ProductCategoryManager", null, new { @class = "nav-link" })</li>*@
-                            @*<li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
-                                <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>*@
-                        </ul>
-                        @* ------------------------------------------------------------------------------------------------------------------------------------ *@
-                        @*
-                            @Url.Action can take it's parameters like this:
-                            -->
-                            @Url.Action(string actionName, string controllerName)
-
-                            Whereas @Html.ActionLink can take it's parameters like this:
-                            -->
-                            @Html.ActionLink(string linkText, string actionName, string controllerName)*@
-                        @* ------------------------------------------------------------------------------------------------------------------------------------ *@
-
-
+                <div id="brown-bar"></div>
+                <div id="white-front-banner" style="width:100%; height:150px;">
+                    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style=" position: relative; top: 40px;">
+                        <div class="container">
+                            @*@Html.ActionLink("The Cupcake Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav mr-auto">
+                                    <li class="nav-item">@Html.ActionLink("Shop Now", "ProductListing", "Home", null, new { @class = "nav-link" })</li>
+                                    <li class="nav-item">@Html.ActionLink("Opening Hours", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                                    <li class="nav-item">@Html.ActionLink("Allergies", "Index", "Home", null, new { @class = "nav-link" })</li>
+                                    <li>
+                                        <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                                            <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" />
+                                        </a>
+                                    </li>
+                                </ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="nav-icons">
                                         <a href="@Url.Action("Search", "SearchController")">
-                                            <i class="fas fa-search icons"></i>
-                                        </a>
+                                                    <i class="fas fa-search icons"></i>
+                                                </a>
                                     </li>
                                     <li class="nav-icons">
                                         <a href="@Url.Action("Map", "MapController")">
                                             <i class="fas fa-map-marker-alt icons"></i>
                                         </a>
                                     </li>
-                                    <li class="nav-icons">
-                                        <a href="@Url.Action("Basket", "BasketController")">
+                                    <li class="nav-icons fa-stack">
+                                        <a href="@Url.Action("Index", "Basket")">
                                             <i class="fas fa-shopping-basket icons"></i>
+                                            <i class="fas fa-circle fa-stack-1x" style=" position: absolute; left: 2px; top: -16px; font-size: 14px; display:none;"></i>
                                         </a>
                                     </li>
-                                </ul>
+                                 </ul>
                                 @Html.Partial("_LoginPartial")
                             </div>
                         </div>
                     </nav>
                 </div>
             </div>
-            @RenderBody()
+            @*<div style="padding-top: 200px;">*@
+                @RenderBody()
+            @*</div>*@
         </div>
             <footer class="mt-5" style="background-color: #422316" id="footer">
                 @*<div class="container-fluid">*@
@@ -91,7 +74,7 @@
                                 <div class="card col-12 col-md-2 pr-0">
                                     <div class="card-content">
                                         <div class="card-text mt-4 pl-5">
-                                            <p><small>@Html.ActionLink("Shop Online", "Index", "Home")</small></p>
+                                            <p><small>@Html.ActionLink("Shop Online", "ProductListing", "Home")</small></p>
                                             <p><small>@Html.ActionLink("About Us", "About", "Home")</small></p>
                                             <p><small>@Html.ActionLink("Contact Us", "Contact", "Home")</small></p>
                                             <p><small>@Html.ActionLink("Catering", "Catering", "Home")</small></p>

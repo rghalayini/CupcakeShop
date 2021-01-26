@@ -25,11 +25,22 @@ namespace CupcakeShop.WebUI.Controllers
         public ActionResult AddToBasket(string Id)
         {
             basketService.AddToBasket(this.HttpContext, Id);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
+            //return RedirectToAction("Index");
         }
         public ActionResult RemoveFromBasket(string Id)
         {
             basketService.RemoveFromBasket(this.HttpContext, Id);
+            return RedirectToAction("Index");
+        }
+        public ActionResult BasketItemDecrease(string Id)
+        {
+            basketService.BasketItemDecrease(this.HttpContext, Id);
+            return RedirectToAction("Index");
+        }
+        public ActionResult BasketItemIncrease(string Id)
+        {
+            basketService.BasketItemIncrease(this.HttpContext, Id);
             return RedirectToAction("Index");
         }
         public PartialViewResult BasketSummary()

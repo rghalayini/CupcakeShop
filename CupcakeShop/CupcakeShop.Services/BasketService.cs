@@ -106,6 +106,33 @@ namespace CupcakeShop.Services
                 basketContext.Commit();
             }
         }
+        public void BasketItemDecrease(HttpContextBase httpContext, string itemId)
+        {
+            Basket basket = GetBasket(httpContext, true);
+            BasketItem item = basket.BasketItems.FirstOrDefault(i => i.Id == itemId);
+
+            if (item.Quantity <= 1)
+            {
+                basket.BasketItems.Remove(item);
+                basketContext.Commit();
+            }
+            else if (item != null)
+            {
+                item.Quantity = item.Quantity - 1;
+                basketContext.Commit();
+            }    
+        }
+        public void BasketItemIncrease(HttpContextBase httpContext, string itemId)
+        {
+            Basket basket = GetBasket(httpContext, true);
+            BasketItem item = basket.BasketItems.FirstOrDefault(i => i.Id == itemId);
+
+           if (item != null)
+            {
+                item.Quantity = item.Quantity + 1;
+                basketContext.Commit();
+            }
+        }
 
         public List<BasketItemViewModel> GetBasketItems(HttpContextBase httpContext)
         {
