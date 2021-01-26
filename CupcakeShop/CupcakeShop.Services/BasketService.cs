@@ -156,5 +156,12 @@ namespace CupcakeShop.Services
                 return model;
             }
         }
+        //A new method to be able to clear the basket.
+        public void ClearBasket(HttpContextBase httpContext)
+        {
+            Basket basket = GetBasket(httpContext, false);
+            basket.BasketItems.Clear();
+            basketContext.Commit();
+        }
     }
 }

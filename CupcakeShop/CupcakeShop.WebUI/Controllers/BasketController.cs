@@ -1,4 +1,5 @@
 ﻿using CupcakeShop.Core.Contracts;
+using CupcakeShop.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,11 @@ namespace CupcakeShop.WebUI.Controllers
     public class BasketController : Controller
     {
         IBasketService basketService;
-
-        public BasketController(IBasketService BasketService)
+        IOrderService orderService;
+        public BasketController(IBasketService BasketService, IOrderService OrderService)
         {
             this.basketService = BasketService;
+            this.orderService = OrderService;
         }
 
         // GET: Basket
@@ -36,6 +38,33 @@ namespace CupcakeShop.WebUI.Controllers
         {
             var basketSummary = basketService.GetBasketSummary(this.HttpContext);
             return PartialView(basketSummary);
+        }
+        //checkout view(partial view), template: create, model class: Order(Cupcake.Core.Models)
+        public ActionResult Checkout()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Checkout(Order order)
+        {
+            var basketItems = basketService.GetBasketItems(this.HttpContext);
+            order.OrderStatus = "Order Created";
+
+            //TODO: process payment...
+
+            order.OrderStatus = "Payment Processed";
+            orderService.CreateOrder(order, basketItems);
+            //clear the basket
+            basketService.ClearBasket(this.HttpContext);
+
+            //And finally redirect the user to the thank you page with order id.
+            return RedirectToAction("Thankyou", new { OrderId = order.Id });
+        }
+        //partial view for the thank you page. Template: Empty
+        public ActionResult ThankYou(string OrderId)
+        {
+            ViewBag.OrderId = OrderId;
+            return View();
         }
     }
 }
