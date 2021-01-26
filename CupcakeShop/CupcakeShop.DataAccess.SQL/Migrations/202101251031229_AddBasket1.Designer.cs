@@ -7,13 +7,13 @@ namespace CupcakeShop.DataAccess.SQL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddBasket : IMigrationMetadata
+    public sealed partial class AddBasket1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddBasket));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddBasket1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101230025382_AddBasket"; }
+            get { return "202101251031229_AddBasket1"; }
         }
         
         string IMigrationMetadata.Source
