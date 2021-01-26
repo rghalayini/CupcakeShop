@@ -35,9 +35,6 @@
                                     <p class="product-name">@Html.ActionLink(item.Name, "Details", new { id = item.Id })</p>
                                 </div>
                                 <div class="col-md-12">
-                                    <p>@item.Description</p>
-                                </div>
-                                <div class="col-md-12">
                                     <p>@String.Format("{0:c}", item.Price)</p>
                                 </div>
                                 <div class="col-md-12 add-basket">
