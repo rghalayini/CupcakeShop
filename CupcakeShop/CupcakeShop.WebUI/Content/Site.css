@@ -274,7 +274,7 @@ hr {
 /*---- pages with text ----*/
 .pages-text {
     position: relative;
-    margin-top: 200px;
+    
     font-family: Roboto;
     color: #422316;
 }

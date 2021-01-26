@@ -24,30 +24,33 @@
                 width:100%;
                 height:150px;">
 
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style=" position: relative; top: 40px;">
-                <div class="container">
-                    @*@Html.ActionLink("The Cupcake Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav mr-auto">
-                            <li class="nav-item">@Html.ActionLink("Shop Now", "ProductListing", "Home", null, new { @class = "nav-link" })</li>
-                            <li class="nav-item">@Html.ActionLink("Opening Hours", "Contact", "Home", null, new { @class = "nav-link" })</li>
-                            <li class="nav-item">@Html.ActionLink("Allergies", "Index", "Home", null, new { @class = "nav-link" })</li>
-                            <li>
-                                <a class="navbar-brand" href="@Url.Action("Index", "Home")">
-                                    <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" />
-                                </a>
-                            </li>
-                            @*<li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>*@
-                            @*<li class="nav-item">@Html.ActionLink("Product Admin", "Index", "ProductManager", null, new { @class = "nav-link" })</li>*@
-                            @*<li class="nav-item">@Html.ActionLink("Product Category Admin", "Index", "ProductCategoryManager", null, new { @class = "nav-link" })</li>*@
-                            @*<li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style=" position: relative; top: 40px;">
+                        <div class="container">
+                            @*@Html.ActionLink("The Cupcake Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav mr-auto">
+                                    <li class="nav-item">@Html.ActionLink("Shop Now", "ProductListing", "Home", null, new { @class = "nav-link" })</li>
+                                    <li class="nav-item">@Html.ActionLink("Opening Hours", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                                    <li class="nav-item">@Html.ActionLink("Allergies", "Index", "Home", null, new { @class = "nav-link" })</li>
+                                    <li class="nav-item">@Html.ActionLink("Admin", "Index", "Admin", null, new { @class = "nav-link" })</li>
+
+                                    <li>
+                                        <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                                            <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" />
+                                        </a>
+                                    </li>
+
+                                    @*<li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>*@
+                                    @*<li class="nav-item">@Html.ActionLink("Product Admin", "Index", "ProductManager", null, new { @class = "nav-link" })</li>*@
+                                    @*<li class="nav-item">@Html.ActionLink("Product Category Admin", "Index", "ProductCategoryManager", null, new { @class = "nav-link" })</li>*@
+                                    @*<li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
                                 <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>*@
-                        </ul>
-                        @* ------------------------------------------------------------------------------------------------------------------------------------ *@
-                        @*
+                                </ul>
+                                @* ------------------------------------------------------------------------------------------------------------------------------------ *@
+                                @*
                             @Url.Action can take it's parameters like this:
                             -->
                             @Url.Action(string actionName, string controllerName)
@@ -55,7 +58,7 @@
                             Whereas @Html.ActionLink can take it's parameters like this:
                             -->
                             @Html.ActionLink(string linkText, string actionName, string controllerName)*@
-                        @* ------------------------------------------------------------------------------------------------------------------------------------ *@
+                                @* ------------------------------------------------------------------------------------------------------------------------------------ *@
 
 
                                 <ul class="nav navbar-nav navbar-right">
@@ -81,51 +84,55 @@
                     </nav>
                 </div>
             </div>
-            @RenderBody()
-        </div>
+                <div style="padding-top:200px">
+                @RenderBody()
+                </div>
+            </div>
             <footer class="mt-5" style="background-color: #422316" id="footer">
                 @*<div class="container-fluid">*@
-                    <div class="card px-5">
-                        <div class="card-body px-5">
-                            <div class="row px-5">
-                                <div class="card col-12 col-md-2 pr-0">
-                                    <div class="card-content">
-                                        <div class="card-text mt-4 pl-5">
-                                            <p><small>@Html.ActionLink("Shop Online", "Index", "Home")</small></p>
-                                            <p><small>@Html.ActionLink("About Us", "About", "Home")</small></p>
-                                            <p><small>@Html.ActionLink("Contact Us", "Contact", "Home")</small></p>
-                                            <p><small>@Html.ActionLink("Catering", "Catering", "Home")</small></p>
-                                        </div>
+                <div class="card px-5">
+                    <div class="card-body px-5">
+                        <div class="row px-5">
+                            <div class="card col-12 col-md-2 pr-0">
+                                <div class="card-content">
+                                    <div class="card-text mt-4 pl-5">
+                                        <p><small>@Html.ActionLink("Shop Online", "Index", "Home")</small></p>
+                                        <p><small>@Html.ActionLink("About Us", "About", "Home")</small></p>
+                                        <p><small>@Html.ActionLink("Contact Us", "Contact", "Home")</small></p>
+                                        <p><small>@Html.ActionLink("Catering", "Catering", "Home")</small></p>
                                     </div>
                                 </div>
-                                <div class="card col-12 col-md-2">
-                                    <div class="card-content">
-                                        <div class="card-text mt-4 pl-0 ml-0">
-                                            <p><small>@Html.ActionLink("Dietary & Allergen", "DietAll", "Home")</small></p>
-                                            <p><small>@Html.ActionLink("Careers", "Careers", "Home")</small></p>
-                                            <p><small>@Html.ActionLink("Privacy Policy", "PrivPol", "Home")</small></p>
-                                            <p><small>@Html.ActionLink("Terms & Conditions", "TermsCon", "Home")</small></p>
-                                        </div>
+                            </div>
+                            <div class="card col-12 col-md-2">
+                                <div class="card-content">
+                                    <div class="card-text mt-4 pl-0 ml-0">
+                                        <p><small>@Html.ActionLink("Dietary & Allergen", "DietAll", "Home")</small></p>
+                                        <p><small>@Html.ActionLink("Careers", "Careers", "Home")</small></p>
+                                        <p><small>@Html.ActionLink("Privacy Policy", "PrivPol", "Home")</small></p>
+                                        <p><small>@Html.ActionLink("Terms & Conditions", "TermsCon", "Home")</small></p>
                                     </div>
                                 </div>
-                                <div class="card col-12 col-md-4 mt-4 pl-0">
-                                    <div class="card-content my-auto">
-                                        <a href="@Url.Action("Index", "Home")">
-                                            <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo"  style="width:200px;height:auto" class="rounded-circle" />
-                                        </a>
-                                    </div>
+                            </div>
+                            <div class="card col-12 col-md-4 mt-4 pl-0">
+                                <div class="card-content my-auto">
+                                    <a href="@Url.Action("Index", "Home")">
+                                        <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" style="width:200px;height:auto" class="rounded-circle" />
+                                    </a>
                                 </div>
-                                <div class="card col-12 col-md-2 mt-4">
-                                    <div class="card-content text-center my-auto">
-                                        <i class="fab fa-facebook-square fa-2x"></i> <i class="fab fa-twitter-square fa-2x"></i> <i class="fab fa-instagram fa-2x"></i>
-                                    </div>
+                            </div>
+                            <div class="card col-12 col-md-2 mt-4">
+                                <div class="card-content text-center my-auto">
+                                    <i class="fab fa-facebook-square fa-2x"></i> <i class="fab fa-twitter-square fa-2x"></i> <i class="fab fa-instagram fa-2x"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 @*</div>*@
             </footer>
+        
     </div>
+    
 
             @Scripts.Render("~/bundles/jquery")
             @Scripts.Render("~/bundles/bootstrap")

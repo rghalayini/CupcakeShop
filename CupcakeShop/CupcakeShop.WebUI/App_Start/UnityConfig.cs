@@ -51,6 +51,8 @@ namespace CupcakeShop.WebUI
             container.RegisterType<IRepository<Basket>, SQLRepository<Basket>>();
             container.RegisterType<IRepository<BasketItem>, SQLRepository<BasketItem>>();
             container.RegisterType<IBasketService, BasketService>();
+            // Inject our customer repository in this file.
+            container.RegisterType<IRepository<Customer>, SQLRepository<Customer>>();
         }
     }
 }
