@@ -32,8 +32,8 @@
     top: -30px;
     height: 125px;
     width: 150px;
-    /* for the footer start */
-    border-radius: 75%;
+    /* for the footer start 
+    border-radius: 75%;*/
     background-color: white;
     /* for the footer end */
 }
@@ -53,14 +53,14 @@
 }
 
 #content-wrap {
-    padding-bottom: 140px; /* Footer height */
+    padding-bottom: 200px; /* Footer height */
 }
 
 #footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 140px; /* Footer height */
+    height: 200px; /* Footer height */
 }
 
 .card,
@@ -71,8 +71,12 @@
     border: none;
 }
 
+a {
+    color: white;
+}
+
 p {
-    margin-bottom: 0;
+    margin-bottom: 0; /*distance between p tags vertically*/
 }
 
 /* for the footer end */

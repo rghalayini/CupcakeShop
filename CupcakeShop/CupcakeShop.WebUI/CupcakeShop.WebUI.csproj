@@ -372,6 +372,7 @@
     <Content Include="Views\ProductCategoryManager\Edit.cshtml" />
     <Content Include="Views\ProductCategoryManager\Delete.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\ProductListing.cshtml" />
     <Content Include="Views\Basket\BasketSummary.cshtml" />
     <Content Include="Views\Basket\Index.cshtml" />
     <Content Include="Views\Home\Catering.cshtml" />
