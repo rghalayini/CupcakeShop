@@ -6,20 +6,30 @@
     <div class="pages-title">
         <h2>Admin Pages</h2>
     </div>
-    <div class="text">
-        <div class="col-md-6">
-            <h4>Product Managment</h4>
-            <div class="list-group">
-                @Html.ActionLink("Product Categories", "Index", "ProductCategoryManager", null, new { @class = "list-group-item" })
-                @Html.ActionLink("Product", "Index", "ProductManager", null, new { @class = "list-group-item" })
-            </div>
+    <div class="contacts-container">
+        <div class="text contacts-text">
+            <h3 style="text-align:left;">How to use</h3>
+            <p>
+                Click on Product Categories to manage the different categories of poducts. You can edit, add, and delete entries.
+            </p>
+            <p>Click on Product to manage the different products that are sold in the eshop. You can edit, add, and delete products.
+            The products will appear in the Shop Now page.</p>
+            <p> Click on Orders to see and manage orders after they  have been submitted by the clients.</p>
         </div>
-        <div class="col-md-6">
-            <h4>Order Management</h4>
-            <div class="list-group">
-                @Html.ActionLink("Orders", "Index", "OrderManager", null, new { @class = "list-group-item" })
+        <div class="text contacts-text container mt-5 contacts-map">
+            <div class="col-md-6" style="max-width:70%;">
+                  <h4>Product Managment</h4>
+                <div class="list-group admin-text">
+                    @Html.ActionLink("Product Categories", "Index", "ProductCategoryManager", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("Product", "Index", "ProductManager", null, new { @class = "list-group-item" })
+                </div>
             </div>
-        </div>
+            <div class="col-md-6" style="margin-top:20px; max-width:70%;">
+                <h4>Order Management</h4>
+                <div class="list-group admin-text">
+                    @Html.ActionLink("Orders", "Index", "OrderManager", null, new { @class = "list-group-item" })
+                </div>
+            </div>
+         </div>
     </div>
-
 </div>

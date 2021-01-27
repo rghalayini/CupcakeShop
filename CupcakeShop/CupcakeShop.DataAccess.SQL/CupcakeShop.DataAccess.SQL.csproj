@@ -53,10 +53,6 @@
     <Compile Include="Migrations\202101191015470_Initial.Designer.cs">
       <DependentUpon>202101191015470_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101221238508_AddBasket.cs" />
-    <Compile Include="Migrations\202101221238508_AddBasket.Designer.cs">
-      <DependentUpon>202101221238508_AddBasket.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202101261316057_AddCustomer.cs" />
     <Compile Include="Migrations\202101261316057_AddCustomer.Designer.cs">
       <DependentUpon>202101261316057_AddCustomer.cs</DependentUpon>
@@ -82,9 +78,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202101191015470_Initial.resx">
       <DependentUpon>202101191015470_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101221238508_AddBasket.resx">
-      <DependentUpon>202101221238508_AddBasket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101261316057_AddCustomer.resx">
       <DependentUpon>202101261316057_AddCustomer.cs</DependentUpon>
