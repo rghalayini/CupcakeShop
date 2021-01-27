@@ -37,7 +37,9 @@
     background-color: white;
     /* for the footer end */
 }
-
+.basket-badge {
+    background-color: #e29495;
+}
 .fa,
 .fas {
     padding-right: 45px;
