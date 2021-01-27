@@ -36,7 +36,9 @@
     height: 125px;
     width: 150px;
 }
-
+.basket-badge {
+    background-color: #e29495;
+}
 .fa,
 .fas {
     padding-right: 45px;
