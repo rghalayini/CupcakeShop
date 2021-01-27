@@ -1,69 +1,86 @@
 ﻿@model CupcakeShop.Core.ViewModels.ProductManagerViewModel
-@{
-    ViewBag.Title = "Create";
-}
+@*@{
+        ViewBag.Title = "Create";
+    }*@
 
-<h2>Create</h2>
 
-<div container style="padding-top:200px">
-    @using (Html.BeginForm("Create", "ProductManager", FormMethod.Post, new { encType = "multipart/form-data" }))
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            <h4>Product</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.Product.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Product.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Product.Name, "", new { @class = "text-danger" })
-                </div>
+<div class="pages-text">
+    <div class="pages-title">
+        <h2>Create Product</h2>
+    </div>
+    <div class="contacts-container">
+        <div class="text contacts-text product-list-admin-view">
+            <div class="checkout-container back-admin-container">
+                <a href="@Url.Action("Index", "Admin")" class="btn btn-checkout">Back to Admin Page</a>
             </div>
+            <h3 style="text-align:left; margin-top:50px">How to use</h3>
+            <p>
+                Choose the name of the product in "Name"
+            </p>
+            <p>
+                Write a small description of the product in "Description". It will be shown in the product page in Shop Now.
+            </p>
+            <p> Choose a price.</p>
+            <p> Choose a category. A dropdown list of categories show only the categories that are present. If category is not found, go to the category manager to create a new one</p>
+            <p>Upload an image of the product.</p>
+        </div>
+        <div class="text contacts-text container mt-5 contacts-map">
+            <div class="col-md-6" style="max-width:70%;">
+                <div class="list-group admin-text">
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Product.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Product.Description, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Product.Description, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Product.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Product.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Product.Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Product.Price, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Product.Price, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Product.Price, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Product.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Product.Description, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Product.Description, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Product.Category, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.Product.Category, new SelectList(Model.ProductCategories, "Category", "Category"), new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Product.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Product.Price, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Product.Price, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Product.Image, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <input type="file" id="file" name="file" class="form-control" />
-                </div>
-            </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Product.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.Product.Category, new SelectList(Model.ProductCategories, "Category", "Category"), new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Product.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <input type="file" id="file" name="file" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-checkout" />
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-    }
-</div>
-    <div>
-        @Html.ActionLink("Back to List", "Index")
     </div>
+</div>
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

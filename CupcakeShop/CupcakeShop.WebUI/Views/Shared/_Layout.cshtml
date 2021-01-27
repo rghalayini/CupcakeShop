@@ -31,7 +31,7 @@
                                 <ul class="nav navbar-nav mr-auto">
                                     <li class="nav-item">@Html.ActionLink("Shop Now", "ProductListing", "Home", null, new { @class = "nav-link" })</li>
                                     <li class="nav-item">@Html.ActionLink("Opening Hours", "Contact", "Home", null, new { @class = "nav-link" })</li>
-                                    <li class="nav-item">@Html.ActionLink("Allergies", "Index", "Home", null, new { @class = "nav-link" })</li>
+                                    <li class="nav-item">@Html.ActionLink("Allergies", "DietAll", "Home", null, new { @class = "nav-link" })</li>
                                     <li>
                                         <a class="navbar-brand" href="@Url.Action("Index", "Home")">
                                             <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" />
@@ -45,7 +45,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-icons">
-                                        <a href="@Url.Action("Map", "MapController")">
+                                        <a href="@Url.Action("Contact", "Home")">
                                             <i class="fas fa-map-marker-alt icons"></i>
                                         </a>
                                     </li>
@@ -79,41 +79,46 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card col-12 col-md-2">
-                                <div class="card-content">
-                                    <div class="card-text mt-4 pl-0 ml-0">
+                                <div class="card col-12 col-md-2">
+                                    <div class="card-content">
+                                        <div class="card-text mt-4 pl-0 ml-0">
                                         <p><small>@Html.ActionLink("Dietary & Allergen", "DietAll", "Home")</small></p>
                                         <p><small>@Html.ActionLink("Careers", "Careers", "Home")</small></p>
                                         <p><small>@Html.ActionLink("Privacy Policy", "PrivPol", "Home")</small></p>
                                         <p><small>@Html.ActionLink("Terms & Conditions", "TermsCon", "Home")</small></p>
+                                        <p><small>@Html.ActionLink("Admin Login", "Index", "Admin", null, new { @class = "nav-link" })</small></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="card col-12 col-md-4 mt-4 pl-0">
                                 <div class="card-content my-auto">
                                     <a href="@Url.Action("Index", "Home")">
-                                        <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="logo" style="width:200px;height:auto" class="rounded-circle" />
+                                        <div class="footer-circle"></div>
+                                        <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="footer-logo" class="rounded-circle" />
                                     </a>
                                 </div>
                             </div>
                             <div class="card col-12 col-md-2 mt-4">
                                 <div class="card-content text-center my-auto">
-                                    <i class="fab fa-facebook-square fa-2x"></i> <i class="fab fa-twitter-square fa-2x"></i> <i class="fab fa-instagram fa-2x"></i>
+                                    <a href="https://www.facebook.com/">
+                                        <i class="fab fa-facebook-square fa-2x"></i>
+                                    </a>
+                                    <a href="https://www.twitter.com/">
+                                        <i class="fab fa-twitter-square fa-2x"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/">
+                                        <i class="fab fa-instagram fa-2x"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 @*</div>*@
-            </footer>
-        
+            </footer> 
     </div>
-    
-
             @Scripts.Render("~/bundles/jquery")
             @Scripts.Render("~/bundles/bootstrap")
             @RenderSection("scripts", required: false)
-
-
 </body>
 </html>

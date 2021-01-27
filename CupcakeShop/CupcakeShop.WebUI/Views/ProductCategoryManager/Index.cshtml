@@ -1,32 +1,48 @@
 ﻿@model IEnumerable<CupcakeShop.Core.Models.ProductCategory>
 
-@{
+@*@{
     ViewBag.Title = "Index";
-}
+}*@
 
-<h2>Index</h2>
+<div class="pages-text">
+    <div class="pages-title">
+        <h2>Product Category Admin View</h2>
+    </div>
+    <div class="contacts-container">
+        <div class="text contacts-text product-list-admin-view">
+            <div class="button-container">
+                <div class="checkout-container back-admin-container">
+                    <a href="@Url.Action("Index", "Admin")" class="btn btn-checkout">Back to Admin Page</a>
+                </div>
+                <div class="checkout-container add-product-container">
+                    <a href="@Url.Action("Create", "ProductCategoryManager")" class="btn btn-checkout">Create New Category</a>
+                </div>
+            </div>
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Category)
+                        </th>
+                        <th></th>
+                    </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
-        <th></th>
-    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category)
+                            </td>
+                            <td>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+                                <a href="@Url.Action("Edit", "ProductCategoryManager", new { Id=item.Id })" class="btn btn-danger btn-edit">Edit</a>
+                                <a href="@Url.Action("Delete", "ProductCategoryManager", new { Id=item.Id })" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
 
-</table>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
