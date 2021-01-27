@@ -25,22 +25,32 @@
                     <div class="row">
                         @foreach (var item in Model.Products)
                         {
-                            <div class="col-md-4">
-                                <div class="col-md-12 item-slide">
-                                    <a class="product-item">
-                                        <img class="img" style="height:250px" src="~/Content/ProductImages/@item.Image" />
-                                    </a>
-                                </div>
-                                <div class="col-md-12">
-                                    <p class="product-name">@Html.ActionLink(item.Name, "Details", new { id = item.Id })</p>
-                                </div>
-                                <div class="col-md-12">
-                                    <p>@String.Format("{0:c}", item.Price)</p>
-                                </div>
-                                <div class="col-md-12 add-basket">
-                                    <a href="@Url.Action("AddToBasket","Basket", new { Id=item.Id})" class="btn btn-default add-button">Add to Basket</a>
-                                </div>
+                        <div class="col-md-4">
+                            <div class="col-md-12 item-slide">
+                                <a class="product-item">
+                                    <img class="img" style="height:250px" src="~/Content/ProductImages/@item.Image" />
+                                </a>
                             </div>
+                            <div class="col-md-12">
+                                <p>
+                                    <div class="rating rating2">
+                                            <a href="#5" title="Give 5 stars">★</a>
+                                            <a href="#4" title="Give 4 stars">★</a>
+                                            <a href="#3" title="Give 3 stars">★</a>
+                                            <a href="#2" title="Give 2 stars">★</a>
+                                            <a href="#1" title="Give 1 star">★</a>
+                                    </div></p>
+                            </div>
+                            <div class="col-md-12">
+                                <p class="product-name">@Html.ActionLink(item.Name, "Details", new { id = item.Id })</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p>@String.Format("{0:c}", item.Price)</p>
+                            </div>
+                            <div class="col-md-12 add-basket">
+                                <a href="@Url.Action("AddToBasket","Basket", new { Id=item.Id})" class="btn btn-default add-button">Add to Basket</a>
+                            </div>
+                        </div>
                         }
                     </div>
                 </div>
