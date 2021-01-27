@@ -41,21 +41,19 @@
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="nav-icons">
                                         <a href="@Url.Action("Search", "SearchController")">
-                                                    <i class="fas fa-search icons"></i>
-                                                </a>
+                                            <i class="fas fa-search icons"></i>
+                                        </a>
                                     </li>
                                     <li class="nav-icons">
                                         <a href="@Url.Action("Map", "MapController")">
                                             <i class="fas fa-map-marker-alt icons"></i>
                                         </a>
                                     </li>
-                                    <li class="nav-icons fa-stack">
-                                        <a href="@Url.Action("Index", "Basket")">
-                                            <i class="fas fa-shopping-basket icons"></i>
-                                            <i class="fas fa-circle fa-stack-1x" style=" position: absolute; left: 2px; top: -16px; font-size: 14px; display:none;"></i>
-                                        </a>
-                                    </li>
-                                 </ul>
+                                </ul>
+                                @{
+                                    Html.RenderAction("BasketSummary", "Basket");
+                                }
+                                
                                 @Html.Partial("_LoginPartial")
                             </div>
                         </div>
