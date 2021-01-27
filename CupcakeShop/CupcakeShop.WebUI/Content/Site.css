@@ -404,7 +404,14 @@ hr {
     }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1400px) {
+    .table,
+    .product-list-admin-view {
+        width: 1200px;
+    }
+}
+
+@media (min-width: 1580px) {
     .table,
     .product-list-admin-view {
         width: 1400px;
@@ -513,4 +520,21 @@ hr {
 }
 .edit-text{
     width:1000px;
+}
+
+/*---- Login form ----*/
+#loginForm a {
+    color: #422316;
+}
+
+.form-group .col-md-10{
+    max-width:50%;
+}
+.contacts-container a {
+    color: #422316;
+    padding-left: 13%;
+}
+
+.form-group-checkout .col-md-10 {
+    max-width: 100%;
 }
