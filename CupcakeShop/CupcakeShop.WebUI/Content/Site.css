@@ -45,8 +45,16 @@
     color: inherit;
 }
 
-/* for the footer start */
-
+.fa-circle{
+    color:red;
+}
+.fa-stack-1x {
+    position: absolute;
+    left: 2px;
+    top: -16px;
+    font-size: 14px;
+}
+/* ----- footer start -----*/
 #page-container {
     position: relative;
     min-height: 100vh;
@@ -305,4 +313,66 @@ hr {
 .contacts-map img{
     width:60%;
     padding-top:20px;
+}
+
+/* ---- Basket Style ----*/
+.basket-container {
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.fa-plus-circle {
+    font-size: 20px;
+    color: green;
+    padding-left:30px;
+}
+
+.fa-minus-circle {
+    font-size: 20px;
+    color: red;
+    padding-right: 30px;
+}
+.btn-checkout {
+    float: right;
+    width: 300px;
+    color: #fff;
+    background-color: green;
+    border-color: green;
+}
+
+@media (min-width: 576px) {
+    .table {
+        width: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+    .table {
+        width: 700px;
+    }
+}
+
+@media (min-width: 992px) {
+    .table {
+        width: 900px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .table {
+        width: 1000px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .table {
+        width: 1400px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .table {
+        width: 1500px;
+    }
 }

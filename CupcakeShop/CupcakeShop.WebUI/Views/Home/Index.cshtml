@@ -14,7 +14,7 @@
                 <hr />
                 <div class="box-containers">
                     <div class="home-box">
-                        <a href="@Url.Action("Products", "ProductController")">
+                        <a href="@Url.Action("ProductListing", "Home")">
                             <h2>Shop Cupcakes</h2>
                         </a>
                     </div>
@@ -52,7 +52,7 @@
                                 <p>@item.Price</p>
                             </div>
                             <div class="col-md-12 add-basket">
-                                <a href="#" class="btn btn-default">Add to Basket</a>
+                                <a href="@Url.Action("AddToBasket","Basket", new { Id=item.Id})" class="btn btn-default add-button">Add to Basket</a>
                             </div>
                         </div>
                     }

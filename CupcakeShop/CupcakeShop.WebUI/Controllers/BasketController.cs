@@ -27,11 +27,36 @@ namespace CupcakeShop.WebUI.Controllers
         public ActionResult AddToBasket(string Id)
         {
             basketService.AddToBasket(this.HttpContext, Id);
+            //String redirect = this.HttpContext.Request["redirect"];
+            //if (redirect != null)
+            //{
+            //    if (redirect == "Home/ProductListing")
+            //    {
+            //        return RedirectToAction("ProductListing", "Home");
+            //    } else
+            //    {
+            //        return RedirectToAction("Index", "Home");
+            //    }
+            //} else
+            //{
+            //    return RedirectToAction("Index", "Home");
+
+            //}
             return RedirectToAction("Index");
         }
         public ActionResult RemoveFromBasket(string Id)
         {
             basketService.RemoveFromBasket(this.HttpContext, Id);
+            return RedirectToAction("Index");
+        }
+        public ActionResult BasketItemDecrease(string Id)
+        {
+            basketService.BasketItemDecrease(this.HttpContext, Id);
+            return RedirectToAction("Index");
+        }
+        public ActionResult BasketItemIncrease(string Id)
+        {
+            basketService.BasketItemIncrease(this.HttpContext, Id);
             return RedirectToAction("Index");
         }
         public PartialViewResult BasketSummary()
