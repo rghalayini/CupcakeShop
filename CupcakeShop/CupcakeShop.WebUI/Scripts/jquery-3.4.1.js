@@ -12,13 +12,12 @@
  * Date: 2019-05-01T21:04Z
  */
 
-
 ( function( global, factory ) {
 
-	//added method to display red circle on top of basket when an order is added
-	$('.add-button').on('click', function () {
-		$('.fa-circle').css('display', 'block');
-	});
+		//added method to display red circle on top of basket when an order is added
+		$('.add-button').on('click', function () {
+			$('.fa-circle').css('display', 'block');
+		});
 
 	"use strict";
 
