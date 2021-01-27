@@ -1,6 +1,10 @@
 ﻿@model CupcakeShop.Core.ViewModels.BasketSummaryViewModel
 
 <ul class="nav navbar-nav navbar-right">
-    <li><a href="@Url.Action("Index", "Basket")">@Model.BasketCount items</a></li>
-    <li><a href="@Url.Action("Index", "Basket")">@String.Format("{0:c}", Model.BasketTotal)</a></li>
-</ul> 
+    <li class="nav-icons">
+        <a href="@Url.Action("Index", "Basket")">
+            <span class="badge badge-pill badge-info">@Model.BasketCount</span>
+            <i class="fas fa-shopping-basket icons"></i>
+        </a>
+    </li>
+</ul>
