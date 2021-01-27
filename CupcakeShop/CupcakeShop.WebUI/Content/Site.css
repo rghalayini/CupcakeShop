@@ -514,6 +514,22 @@ hr {
     border-color: rgb(131, 178, 198);
     color:white;
 }
+.btn-proceedtopay {
+    background-color: #a8c8d5;
+    border-color: #a8c8d5;
+    color: #422316;
+}
+    .btn-proceedtopay:hover .btn-proceedtopay:focus {
+        background-color: rgb(131, 178, 198);
+        border-color: rgb(131, 178, 198);
+        color: white;
+    }
+.btn-backtobasket {
+    background-color: #a8c8d5;
+    border-color: #a8c8d5;
+    color: #422316;
+}
+
 .btn-edit {
     background-color: #a8c8d5;
     border-color: #a8c8d5;
