@@ -376,7 +376,9 @@ hr {
         width: 1500px;
     }
 }
-/* rating */
+
+/*---- rating start----- */
+
 .rating {
     width: 226px;
     margin: 0 auto 1em;
@@ -420,3 +422,4 @@ hr {
 .rating2 a {
     float: none
 }
+/*---- rating end----- */
