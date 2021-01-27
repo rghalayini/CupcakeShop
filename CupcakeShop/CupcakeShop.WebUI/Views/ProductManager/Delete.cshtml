@@ -1,64 +1,72 @@
 ﻿@model CupcakeShop.Core.Models.Product
 
-@{
+@*@{
     ViewBag.Title = "Delete";
-}
+}*@
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+<div class="pages-text">
+    <div class="pages-title">
+        <h2>Delete Product</h2>
+    </div>
+    <div class="contacts-container delete-product-container">
+        <div class="text contacts-text product-list-admin-view">
+            <div class="button-container">
+                <div class="checkout-container back-admin-container">
+                    <a href="@Url.Action("Index", "ProductManager")" class="btn btn-checkout">Back to Product Page</a>
+                </div>
+            </div>
+            <div style="padding-bottom:50px;">
+                <h3 style="text-align:left">Are you sure you want to delete this product?</h3>
+                <p>
+                    If so, click on the delete button.
+                </p>
+            </div>
+            <table class="table">
+                <tr>
+                    <th>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Category)
+                    </th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Category)
+                    </td>
+                </tr>
+            </table>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Delete" class="btn btn-checkout btn-delete-big" />
+                    </div>
+                </div>
+            }
         </div>
-    }
+    </div>
 </div>
