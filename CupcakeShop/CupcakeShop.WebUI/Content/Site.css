@@ -231,10 +231,7 @@ hr {
     color: white; /* old IE */
     background-color: white; /* Modern Browsers */
 }
-.productlisting.hr {
-        color: #a8c8d5; /* old IE */
-        background-color: #a8c8d5; /* Modern Browsers */
-}
+
 /* ----- Favourites ----*/
 #favourites {
     text-align: center;
