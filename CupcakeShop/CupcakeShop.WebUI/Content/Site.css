@@ -324,7 +324,10 @@ hr {
 /*---- pages with text ----*/
 .pages-text {
     position: relative;
-    
+    font-family: Roboto;
+    color: #422316;
+}
+.pages-text-no-position {
     font-family: Roboto;
     color: #422316;
 }
