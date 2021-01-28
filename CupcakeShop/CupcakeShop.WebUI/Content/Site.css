@@ -385,10 +385,45 @@ hr {
 
 /*---basket table and create product table ----*/
 /*---details*/
+.table-categories{
+    margin-left:0;
+}
 @media (min-width: 576px) {
     .table,
     .product-list-admin-view {
         width: 500px;
+    }
+    .product-category-admin-view {
+        width: 400px;
+        margin-left: 30%;
+    }
+
+    .table-categories {
+        width: 400px;
+    }
+
+    td.table-category-item {
+        padding-right: 170px;
+    }
+
+    .table-cell {
+        padding-left: 170px;
+    }
+
+    .image-product-container {
+        padding-left: 80px;
+    }
+
+    .image-product-container {
+        padding-left: 70px;
+    }
+
+    .category-back {
+        width: 160px;
+    }
+
+    .category-new {
+        width: 160px;
     }
 }
 
@@ -397,9 +432,35 @@ hr {
     .product-list-admin-view {
         width: 700px;
     }
+    .product-category-admin-view {
+        width: 400px;
+        margin-left: 30%;
+    }
+
+    .table-categories {
+        width: 400px;
+    }
+
+    td.table-category-item {
+        padding-right: 170px;
+    }
+
+    .table-cell {
+        padding-left: 170px;
+    }
+
+    .image-product-container {
+        padding-left: 80px;
+    }
 
     .image-product-container {
         padding-left: 70px;
+    }
+    .category-back {
+        width: 160px;
+    }
+    .category-new {
+        width: 160px;
     }
 }
 
@@ -408,8 +469,30 @@ hr {
     .product-list-admin-view {
         width: 900px;
     }
+    .product-category-admin-view {
+        width: 450px;
+        margin-left: 30%;
+    }
+
+    .table-categories {
+        width: 400px;
+    }
+
+    td.table-category-item {
+        padding-right: 170px;
+    }
+
+    .table-cell {
+        padding-left: 170px;
+    }
     .image-product-container {
         padding-left: 80px;
+    }
+    .category-back {
+        width: 160px;
+    }
+    .category-new {
+        width: 160px;
     }
 }
 
@@ -418,9 +501,31 @@ hr {
     .product-list-admin-view {
         width: 1000px;
     }
+    .product-category-admin-view {
+        width: 450px;
+        margin-left: 30%;
+    }
+
+    .table-categories {
+        width: 450px;
+    }
+
+    td.table-category-item {
+        padding-right: 200px;
+    }
+
+    .table-cell {
+        padding-left: 200px;
+    }
 
     .image-product-container {
         padding-left: 100px;
+    }
+    .category-back {
+        width: 160px;
+    }
+    .category-new {
+        width: 160px;
     }
 }
 
@@ -429,9 +534,32 @@ hr {
     .product-list-admin-view {
         width: 1200px;
     }
+    .product-category-admin-view {
+        width: 500px;
+        margin-left: 32%;
+    }
+
+    .table-categories {
+        width: 500px;
+    }
+
+    td.table-category-item {
+        padding-right: 250px;
+    }
+
+    .table-cell {
+        padding-left: 250px;
+    }
 
     .image-product-container {
         padding-left: 150px;
+    }
+    .category-back {
+        width: 200px;
+    }
+
+    .category-new {
+        width: 200px;
     }
 }
 
@@ -441,21 +569,62 @@ hr {
     .product-list-admin-view {
         width: 1400px;
     }
+    .product-category-admin-view {
+        width: 600px;
+        margin-left: 32%;
+    }
+    .table-categories {
+        width: 600px;
+    }
+
+    td.table-category-item {
+        padding-right: 300px;
+    }
+
+    .table-cell {
+        padding-left: 300px;
+    }
 
     .image-product-container {
         padding-left: 200px;
+    }
+    .category-back {
+        width: 200px;
+    }
+
+    .category-new {
+        width: 200px;
     }
 }
 
 
 @media (min-width: 1800px) {
+
     .table,
     .product-list-admin-view {
         width: 1500px;
     }
-
+    .product-category-admin-view {
+        width: 700px;
+        margin-left: 32%;
+    }
+    .table-categories{
+        width:700px;
+    }
+    td.table-category-item {
+        padding-right: 400px;
+    }
+    .table-cell {
+        padding-left: 400px;
+    }
     .image-product-container {
         padding-left: 300px;
+    }
+    .category-back {
+        width: 300px;
+    }
+    .category-new {
+        width: 300px;
     }
 }
 

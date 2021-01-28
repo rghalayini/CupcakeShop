@@ -9,17 +9,17 @@
         <h2>Product Category Admin View</h2>
     </div>
     <div class="contacts-container">
-        <div class="text contacts-text product-list-admin-view">
+        <div class="text contacts-text product-category-admin-view">
             <div class="button-container">
                 <div class="checkout-container back-admin-container">
-                    <a href="@Url.Action("Index", "Admin")" class="btn btn-checkout">Back to Admin Page</a>
+                    <a href="@Url.Action("Index", "Admin")" class="btn btn-checkout category-back">Back to Admin Page</a>
                 </div>
                 <div class="checkout-container add-product-container">
-                    <a href="@Url.Action("Create", "ProductCategoryManager")" class="btn btn-checkout">Create New Category</a>
+                    <a href="@Url.Action("Create", "ProductCategoryManager")" class="btn btn-checkout category-new">Create New Category</a>
                 </div>
             </div>
             <div>
-                <table class="table">
+                <table class="table table-categories">
                     <tr>
                         <th>
                             @Html.DisplayNameFor(model => model.Category)
@@ -30,10 +30,10 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
+                            <td class="table-category-item">
                                 @Html.DisplayFor(modelItem => item.Category)
                             </td>
-                            <td>
+                            <td class="table-cell">
 
                                 <a href="@Url.Action("Edit", "ProductCategoryManager", new { Id=item.Id })" class="btn btn-danger btn-edit">Edit</a>
                                 <a href="@Url.Action("Delete", "ProductCategoryManager", new { Id=item.Id })" class="btn btn-danger">Delete</a>
