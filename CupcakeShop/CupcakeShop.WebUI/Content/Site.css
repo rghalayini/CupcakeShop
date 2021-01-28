@@ -466,7 +466,7 @@ hr {
     float: none
 }
 /*---- rating end----- */
-}
+
 
 
 /*---- Admin page -----*/
@@ -515,13 +515,13 @@ hr {
     color:white;
 }
 .btn-proceedtopay {
-    background-color: #a8c8d5;
-    border-color: #a8c8d5;
-    color: #422316;
+    color: #fff;
+    background-color: green;
+    border-color: green;
 }
     .btn-proceedtopay:hover .btn-proceedtopay:focus {
-        background-color: rgb(131, 178, 198);
-        border-color: rgb(131, 178, 198);
+        background-color: green;
+        border-color: green;
         color: white;
     }
 .btn-backtobasket {

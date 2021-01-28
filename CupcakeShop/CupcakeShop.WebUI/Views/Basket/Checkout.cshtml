@@ -68,12 +68,10 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <input type="submit" value="Proceed To Payment" class="btn btn-proceedtopay" />
+            <div class="form-group row pb-3 d-flex justify-content-between col-md-7">
+                @Html.ActionLink("Back to Basket", "Index", null, new { @class = "btn btn-backtobasket" })
+                    <input type="submit" value="Proceed To Payment" class="btn btn-proceedtopay" style="background-color:green;color:white;" />
             </div>
         </div>
     }
-    <div class="pb-3">
-        @Html.ActionLink("Back to Basket", "Index", null, new { @class = "btn btn-proceedtopay" })
-    </div>
 </div>
