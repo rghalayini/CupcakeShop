@@ -65,13 +65,12 @@
                 </div>
             </div>
             <footer class="mt-5" style="background-color: #422316" id="footer">
-                @*<div class="container-fluid">*@
-                <div class="card px-5">
-                    <div class="card-body px-5">
-                        <div class="row px-5">
-                            <div class="card col-12 col-md-2 pr-0">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row text-text justify-content-center">
+                            <div class="card col-2 col-md-2">
                                 <div class="card-content">
-                                    <div class="card-text mt-4 pl-5">
+                                    <div class="card-text mt-4">
                                         <p><small>@Html.ActionLink("Shop Online", "Index", "Home")</small></p>
                                         <p><small>@Html.ActionLink("About Us", "About", "Home")</small></p>
                                         <p><small>@Html.ActionLink("Contact Us", "Contact", "Home")</small></p>
@@ -79,9 +78,9 @@
                                     </div>
                                 </div>
                             </div>
-                                <div class="card col-12 col-md-2">
-                                    <div class="card-content">
-                                        <div class="card-text mt-4 pl-0 ml-0">
+                            <div class="card col-2 col-md-2">
+                                <div class="card-content pr-0">
+                                    <div class="card-text mt-4">
                                         <p><small>@Html.ActionLink("Dietary & Allergen", "DietAll", "Home")</small></p>
                                         <p><small>@Html.ActionLink("Careers", "Careers", "Home")</small></p>
                                         <p><small>@Html.ActionLink("Privacy Policy", "PrivPol", "Home")</small></p>
@@ -90,15 +89,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card col-12 col-md-4 mt-4 pl-0">
-                                <div class="card-content my-auto">
+                            <div class="card col-4 col-md-2 mt-4">
+                                <div class="card-content">
                                     <a href="@Url.Action("Index", "Home")">
                                         <div class="footer-circle"></div>
                                         <img src="~/Content/GenericImages/logoS.png" alt="Site Logo" id="footer-logo" class="rounded-circle" />
                                     </a>
                                 </div>
                             </div>
-                            <div class="card col-12 col-md-3 mt-4">
+                            <div class="card col-2 col-md-2 mt-4">
                                 <div class="card-content text-center my-auto">
                                     <a href="https://www.facebook.com/">
                                         <i class="fab fa-facebook-square fa-2x"></i>
@@ -111,10 +110,14 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                            <div class="card col-2 col-md-2 mt-4">
+                                <div class="card-content">
+                                    <p style="color:#422316"><small>Dietary & Allergen</small></p>
+                                </div>
+                            </div>
                     </div>
                 </div>
-                @*</div>*@
+               
             </footer> 
     </div>
             @Scripts.Render("~/bundles/jquery")
