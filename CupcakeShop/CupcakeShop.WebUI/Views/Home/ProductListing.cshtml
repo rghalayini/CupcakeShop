@@ -4,16 +4,19 @@
     ViewBag.Title = "ProductListing";
 }
 
-<section id="favourites">
 
-    <div class="container">
-        <h1>Our Products</h1>
+
+    <div class="container pages-text">
+        <div class="pages-title">
+            <h2>Our Products</h2>
+            <hr class="productlisting" />
+        </div>
         <div class="favourite-products container">
             <div class="row">
                 <div class=" col-md-2">
 
                     <h4>Filter by Category</h4>
-                    <div class="list-group">
+                    <div class="list-group admin-text">
                         @Html.ActionLink("All", "ProductListing", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item" })
                         @foreach (var cat in Model.ProductCategories)
                         {
@@ -47,4 +50,3 @@
                 </div>
         </div>
     </div>
-</section>
