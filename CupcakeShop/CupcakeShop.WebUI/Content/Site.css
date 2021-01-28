@@ -236,6 +236,7 @@ hr {
     color: white; /* old IE */
     background-color: white; /* Modern Browsers */
 }
+
 /* ----- Favourites ----*/
 #favourites {
     text-align: center;
@@ -507,7 +508,7 @@ hr {
 
 
 
-/*---- Admin page -----*/
+/*---- Admin page and in ProductListing -----*/
 .admin-text{
     margin-top:80px;
 }
@@ -517,8 +518,12 @@ hr {
 .admin-text a:hover {
     text-decoration:none;
 }
-.list-group-item:hover {
+.list-group-item:hover{
     background-color: #e29495;
+}
+.list-group-item.active {
+    background-color: #e29495;
+    border-color: InactiveBorder; 
 }
 
 /*---- Create product page ----*/
