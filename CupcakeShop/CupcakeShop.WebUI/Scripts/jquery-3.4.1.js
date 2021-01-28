@@ -15,10 +15,11 @@
 ( function( global, factory ) {
 
 		//added method to display red circle on top of basket when an order is added
-		$('.add-button').on('click', function () {
+		/*
+		 * $('.add-button').on('click', function () {
 			$('.fa-circle').css('display', 'block');
 		});
-
+		*/
 	"use strict";
 
 	if ( typeof module === "object" && typeof module.exports === "object" ) {
