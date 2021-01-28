@@ -1,87 +1,70 @@
 ﻿@model CupcakeShop.Core.Models.Product
 
-@{
+@*@{
     ViewBag.Title = Model.Name + " Details";
-}
+}*@
 
 
 
-<div>
+@*<div>
     <div>
         <p>@Html.ActionLink("Back to List", "Index") </p>
-    </div>
-    <div class="details-grid">
-        <div class="details-item">
-            <div class="item-wrapper">
-                <div class="details-image">
-                    <img class="img-responsive" src="~/Content/ProductImages/@Model.Image" />
+    </div>*@
+
+<div class="pages-text">
+    <div class="contacts-container">
+        <div class="text contacts-text product-list-admin-view">
+            <div class="button-container">
+                <div class="checkout-container back-admin-container">
+                    <a href="@Url.Action("ProductListing", "Home")" class="btn btn-checkout">Back to Products</a>
                 </div>
             </div>
+                <div class="details-grid">
+                    <div class="details-item">
+                        <div class="item-wrapper image-product-container">
+                            <div class="details-image">
+                                <img class="img-responsive" src="~/Content/ProductImages/@Model.Image" />
+                            </div>
+                        </div>
 
-            <div class="item-wrapper">
-                <div class="details-text">
-                    <dl class="dl-horizontal">
-                        <dt class="h2">
-                            @Html.DisplayFor(model => model.Name)
-                        </dt>
-                        @*<dt>
-                        @Html.DisplayNameFor(model => model.Description)
-                    </dt>*@
-                        <dd>
-                            @Html.DisplayFor(model => model.Description)
-                        </dd>
+                        <div class="item-wrapper">
+                            <div class="details-text">
+                                <dl class="dl-horizontal">
+                                    <dt class="h2">
+                                        @Html.DisplayFor(model => model.Name)
+                                    </dt>
+                                    @*<dt>
+                                    @Html.DisplayNameFor(model => model.Description)
+                                </dt>*@
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Description)
+                                    </dd>
 
-                        @*<dt>
-                        @Html.DisplayNameFor(model => model.Price)
-                    </dt>*@
-                        <dd style="display:flex;">
-                            @Html.DisplayFor(model => model.Price) <p>&nbsp; Kr</p>
+                                    @*<dt>
+                                    @Html.DisplayNameFor(model => model.Price)
+                                </dt>*@
+                                    <dd style="display:flex;">
+                                        @Html.DisplayFor(model => model.Price) <p>&nbsp; Kr</p>
 
-                        </dd>
-                        <dt></dt>
+                                    </dd>
+                                    <dt></dt>
 
-                        <dd class="col-md-12 add-basket add-basket-details">
-                            <a href="#" class="btn btn-default">Add to Basket</a>
-                        </dd>
+                                    <dd class="col-md-12 add-basket add-basket-details">
+                                        @*<a href="" class="btn btn-default add-button">Add to Basket</a>*@
+                                        <a href="@Url.Action("AddToBasket","Basket", new { Id=Model.Id})" class="btn btn-default add-button">Add to Basket</a>
 
-                        <dt></dt>
-                    </dl>
+                                    </dd>
+
+                                    <dt></dt>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-details">
+
+                    </div>
                 </div>
             </div>
         </div>
-
-        @*<div class="row">
-            <div class="col-md-2 cupcake-image-details">
-                <img class="img-responsive" src="~/Content/ProductImages/@Model.Image" />
-            </div>
-            <div class="col-md-10 cupcake-description-details">
-                <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Description)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.Description)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Price)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.Price)
-                    </dd>
-                    <dt></dt>
-                    <dd><a href="#" class="btn btn-default">Add To Basket</a></dd>
-                    <dt></dt>
-                    <dd>@Html.ActionLink("Back to List", "Index")</dd>
-                </dl>
-            </div>
-        </div>*@
-
-        <div class="product-details">
-
-        </div>
-    </div>
-
-
 </div>
 <div class="col-md-12 clearfix"></div>
