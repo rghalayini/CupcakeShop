@@ -62,6 +62,7 @@
                     </tr>
                 </table>
                 <div class="checkout-container">
+                    @Html.ActionLink("Continue Shopping", "ProductListing", "Home", null, new { @class = "btn btn-backtobasket" })
                     <a href="@Url.Action("Checkout", "Basket")" class="btn btn-checkout">Checkout and Pay</a>
                 </div>
             </div>

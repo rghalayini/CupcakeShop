@@ -1,42 +1,39 @@
 ﻿@model CupcakeShop.Core.Models.Order
 
 
-<div class="container pages-text col-8">
+<div class="container pages-text-no-position col-8">
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
 
-    <div class="form-horizontal">
-        <div class="pages-title">
-            <h4>Order</h4>
-            <hr />
-        </div>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group row">
-            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-5">
-                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder="FirstName" } })
-                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        <div class="form-horizontal">
+            <div class="pages-title text-center">
+                <h4>Order</h4><hr />
             </div>
-        </div>
-        <div class="form-group row">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group row justify-content-center">
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "FirstName" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row justify-content-center">
                 @Html.LabelFor(model => model.Surname, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-5">
                     @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Surname" } })
                     @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
                 </div>
             </div>
-
-            <div class="form-group row">
+            <div class="form-group row justify-content-center">
                 @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-5">
                     @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                 </div>
             </div>
-
-            <div class="form-group row">
+            <div class="form-group row justify-content-center">
                 @Html.LabelFor(model => model.Street, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-5">
                     @Html.EditorFor(model => model.Street, new { htmlAttributes = new { @class = "form-control", @placeholder = "Street" } })
@@ -44,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row justify-content-center">
                 @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-5">
                     @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", @placeholder = "City" } })
@@ -52,7 +49,7 @@
                 </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row justify-content-center">
                 @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-5">
                     @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control", @placeholder = "State" } })
@@ -60,7 +57,7 @@
                 </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row justify-content-center">
                 @Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-5">
                     @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control", @placeholder = "Zipcode" } })
@@ -68,9 +65,13 @@
                 </div>
             </div>
 
-            <div class="form-group row pb-3 d-flex justify-content-between col-md-7">
-                @Html.ActionLink("Back to Basket", "Index", null, new { @class = "btn btn-backtobasket" })
+            <div class="form-group row pb-3 justify-content-center">
+                <div class="col-md-3">
+                    @Html.ActionLink("Back to Basket", "Index", null, new { @class = "btn btn-backtobasket" })
+                </div>
+                <div class="col-md-4">
                     <input type="submit" value="Proceed To Payment" class="btn btn-proceedtopay" style="background-color:green;color:white;" />
+                </div>
             </div>
         </div>
     }
