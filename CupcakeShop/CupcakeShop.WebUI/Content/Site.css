@@ -55,6 +55,10 @@
     top: -16px;
     font-size: 14px;
 }
+.navbar-right a {
+    color: #422316;
+}
+
 /* ----- footer start -----*/
 #page-container {
     position: relative;
@@ -156,6 +160,7 @@ p .nav-link {
     position: absolute;
     width: 100%;
     height: auto;
+    bottom:-15%;
 }
 .image-container {
     overflow: hidden;
@@ -285,9 +290,9 @@ hr {
 
 
 /*--- Product Details ----*/
-.details-grid {
+/*.details-grid {
     padding-top:200px;
-}
+}*/
 .details-item {
     display:flex;
     height:400px;
@@ -379,6 +384,7 @@ hr {
 }
 
 /*---basket table and create product table ----*/
+/*---details*/
 @media (min-width: 576px) {
     .table,
     .product-list-admin-view {
@@ -391,6 +397,10 @@ hr {
     .product-list-admin-view {
         width: 700px;
     }
+
+    .image-product-container {
+        padding-left: 70px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -398,28 +408,104 @@ hr {
     .product-list-admin-view {
         width: 900px;
     }
-}
-
-@media (min-width: 1200px) {
-    .table, 
-    .product-list-admin-view {
-        width: 1000px;
+    .image-product-container {
+        padding-left: 80px;
     }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1200px) {
+    .table,
+    .product-list-admin-view {
+        width: 1000px;
+    }
+
+    .image-product-container {
+        padding-left: 100px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .table,
+    .product-list-admin-view {
+        width: 1200px;
+    }
+
+    .image-product-container {
+        padding-left: 150px;
+    }
+}
+
+
+@media (min-width: 1580px) {
     .table,
     .product-list-admin-view {
         width: 1400px;
     }
+
+    .image-product-container {
+        padding-left: 200px;
+    }
 }
+
 
 @media (min-width: 1800px) {
     .table,
     .product-list-admin-view {
         width: 1500px;
     }
+
+    .image-product-container {
+        padding-left: 300px;
+    }
 }
+
+/*---- rating start----- */
+
+.rating {
+    width: 226px;
+    margin: 0 auto 1em;
+    font-size: 30px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.rating input {
+    float: right;
+    opacity: 0;
+    position: absolute;
+}
+
+.rating a,
+.rating label {
+    float: right;
+    color: #aaa;
+    text-decoration: none;
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    -o-transition: color .4s;
+    transition: color .4s;
+}
+
+.rating label:hover ~ label,
+.rating input:focus ~ label,
+.rating label:hover,
+.rating a:hover,
+.rating a:hover ~ a,
+.rating a:focus,
+.rating a:focus ~ a {
+    color: orange;
+    cursor: pointer;
+}
+
+.rating2 {
+    direction: rtl;
+}
+
+.rating2 a {
+    float: none
+}
+/*---- rating end----- */
+
 
 
 /*---- Admin page and in ProductListing -----*/
@@ -466,11 +552,28 @@ hr {
     border-color: #a8c8d5;
     color: #422316;
 }
+
 .back-admin-container .btn-checkout:hover {
     background-color: rgb(131, 178, 198);
     border-color: rgb(131, 178, 198);
-    color:white;
+    color: white;
 }
+.btn-proceedtopay {
+    color: #fff;
+    background-color: green;
+    border-color: green;
+}
+    .btn-proceedtopay:hover .btn-proceedtopay:focus {
+        background-color: green;
+        border-color: green;
+        color: white;
+    }
+.btn-backtobasket {
+    background-color: #a8c8d5;
+    border-color: #a8c8d5;
+    color: #422316;
+}
+
 .btn-edit {
     background-color: #a8c8d5;
     border-color: #a8c8d5;
@@ -520,4 +623,21 @@ hr {
 }
 .edit-text{
     width:1000px;
+}
+
+/*---- Login form ----*/
+#loginForm a {
+    color: #422316;
+}
+
+.form-group .col-md-10{
+    max-width:50%;
+}
+.contacts-container a {
+    color: #422316;
+/*    padding-left: 13%;
+*/}
+
+.form-group-checkout .col-md-10 {
+    max-width: 100%;
 }

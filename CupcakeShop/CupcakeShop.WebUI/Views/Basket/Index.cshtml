@@ -16,7 +16,7 @@
                         <th>
                             Product Name  @*@Html.DisplayNameFor(model => model.ProductName)*@
                         </th>
-                        <th>
+                        <th style="padding-left:38px;">
                             @Html.DisplayNameFor(model => model.Quantity)
                         </th>
                         <th>
@@ -62,7 +62,7 @@
                     </tr>
                 </table>
                 <div class="checkout-container">
-                    <a href="" class="btn btn-checkout">Checkout and Pay</a>
+                    <a href="@Url.Action("Checkout", "Basket")" class="btn btn-checkout">Checkout and Pay</a>
                 </div>
             </div>
         </div>
