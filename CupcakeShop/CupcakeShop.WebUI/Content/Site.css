@@ -813,3 +813,18 @@ hr {
 .form-group-checkout .col-md-10 {
     max-width: 100%;
 }
+
+/*------filter ------*/
+.filter-title{
+    position:fixed;
+    top:300px;
+}
+.filter-column {
+    position: fixed;
+    top: 320px;
+    width: 150px;
+}
+
+.table td{
+    vertical-align:inherit;
+}
