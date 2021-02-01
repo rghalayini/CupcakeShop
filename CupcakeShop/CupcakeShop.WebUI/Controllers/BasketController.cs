@@ -10,13 +10,16 @@ namespace CupcakeShop.WebUI.Controllers
 {
     public class BasketController : Controller
     {
+        IRepository<Customer> customers;
         IBasketService basketService;
         IOrderService orderService;
-        public BasketController(IBasketService BasketService, IOrderService OrderService)
+        public BasketController(IBasketService BasketService, IOrderService OrderService, IRepository<Customer> Customers)
         {
             this.basketService = BasketService;
             this.orderService = OrderService;
+            this.customers = Customers;
         }
+
 
         // GET: Basket
         public ActionResult Index()
@@ -65,16 +68,41 @@ namespace CupcakeShop.WebUI.Controllers
             return PartialView(basketSummary);
         }
         //checkout view(partial view), template: create, model class: Order(Cupcake.Core.Models)
+        [Authorize]
         public ActionResult Checkout()
         {
-            return View();
+            //retrive customer from database (ASP.NET Identity)
+            Customer customer = customers.Collection().FirstOrDefault(c => c.Email == User.Identity.Name);
+
+            //Make sure the customer is nott null
+            if (customer != null)
+            {
+                Order order = new Order()
+                {
+                    Email = customer.Email,
+                    City = customer.City,
+                    State = customer.State,
+                    Street = customer.Street,
+                    FirstName = customer.FirstName,
+                    Surname = customer.LastName,
+                    ZipCode = customer.ZipCode
+                };
+
+                return View(order);
+            }
+            else
+            {
+                return RedirectToAction("Error");
+            }
         }
+
         [HttpPost]
+        [Authorize]
         public ActionResult Checkout(Order order)
         {
             var basketItems = basketService.GetBasketItems(this.HttpContext);
             order.OrderStatus = "Order Created";
-
+            order.Email = User.Identity.Name;
             //TODO: process payment...
 
             order.OrderStatus = "Payment Processed";
@@ -85,7 +113,7 @@ namespace CupcakeShop.WebUI.Controllers
             //And finally redirect the user to the thank you page with order id.
             return RedirectToAction("Thankyou", new { OrderId = order.Id });
         }
-        //partial view for the thank you page. Template: Empty
+        //create view (partial view) for the thank you page. Template: Empty
         public ActionResult ThankYou(string OrderId)
         {
             ViewBag.OrderId = OrderId;
