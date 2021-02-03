@@ -23,9 +23,23 @@ namespace CupcakeShop.WebUI.Controllers
         }
 
         // GET: ProductManager
-        public ActionResult Index()
+        //BElow is the Index without the filtering function
+        //public ActionResult Index()
+        //{
+        //    List<Product> products = context.Collection().ToList();
+        //    return View(products);
+        //}
+        //Below is the Index with the filtering function
+        public ActionResult Index(string searchString)
         {
             List<Product> products = context.Collection().ToList();
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                products = products.Where(p => p.Name.Contains(searchString)).ToList();
+            }
+
             return View(products);
         }
 

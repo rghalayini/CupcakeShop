@@ -21,6 +21,15 @@
                     <a href="@Url.Action("Create", "ProductManager")" class="btn btn-checkout">Create New Product</a>
                 </div>
             </div>
+            <div style="padding-bottom:15px;">
+                <form asp-controller="Movies" asp-action="Index">
+                    <p>
+                        Search Products:
+                    </p>
+                    <input type="text" name="SearchString" />
+                    <input type="submit" value="Filter" />
+                </form>
+            </div>
             <div>
                 <table class="table">
                     <tr>
