@@ -37,7 +37,8 @@ namespace CupcakeShop.WebUI.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                products = products.Where(p => p.Name.Contains(searchString)).ToList();
+                searchString = searchString.ToLower();             
+                products = products.Where(p => p.Name.ToLower().Contains(searchString)).ToList();
             }
 
             return View(products);
