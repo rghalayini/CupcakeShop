@@ -4,6 +4,8 @@
 
 This is an academic exercise to complete the requirements of the Lexicon programming training in Stockholm. All materials are not used for commercial purposes and by no means represent any commercial activity from the developers’ part. The project duration was two weeks during which we were to create an ASP.NET web application for a web shop using the MVC design pattern, with given functionality requirements (not stated here in README).
 
+Check the Documentation file for more information and images of this website.
+
 ### Developers
 
 - Anette Kniberg
